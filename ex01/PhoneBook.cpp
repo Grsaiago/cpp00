@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 20:29:37 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/05/01 18:55:29 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/05/01 19:16:12 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	PhoneBook::addContact(void)
 	return ;
 }
 
-void	PhoneBook::searchList(void)
+void	PhoneBook::searchList(void) const
 {
 	std::string		buff;
 	unsigned int	pb_index;

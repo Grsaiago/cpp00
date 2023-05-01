@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 20:30:25 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/05/01 13:30:30 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/05/01 19:15:46 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ class	Contact
 	public:
 		Contact(void);
 		~Contact(void);
-		void	printContact(void);
-		void	printPreview(void);
+		void	printContact(void) const;
+		void	printPreview(void) const;
 		void	addContact(void);
 		void	addFirstName(void);
 		void	addLastName(void);
@@ -49,7 +49,7 @@ class	PhoneBook
 		PhoneBook(void);
 		~PhoneBook(void);
 		void	addContact(void);
-		void	searchList(void);
+		void	searchList(void) const;
 	private:
 		Contact			contactList[PB_MAX_CONTACTS];
 		unsigned int	contactCount;

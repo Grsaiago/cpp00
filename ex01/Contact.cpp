@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 20:29:52 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/05/01 13:44:29 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/05/01 19:15:55 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Contact::~Contact()
 	return ;
 }
 
-void	Contact::printContact(void)
+void	Contact::printContact(void) const
 {
 
 	std::cout << std::setw(17) << std::left << "First name:" << this->firstName << std::endl;
@@ -36,7 +36,7 @@ void	Contact::printContact(void)
 	std::cout << std::setw(17) << std::left << "Darkest secret: " << this->darkestSecret << std::endl;
 }
 
-void	Contact::printPreview(void)
+void	Contact::printPreview(void) const
 {
 	std::string	aux;
 
