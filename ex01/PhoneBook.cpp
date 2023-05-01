@@ -6,17 +6,15 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 20:29:37 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/05/01 13:46:17 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/05/01 18:55:29 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 #include <string>
 
-PhoneBook::PhoneBook(void)
+PhoneBook::PhoneBook(void) : contactCount(0), contactIterator(0)
 {
-	this->contactCount = 0;
-	this->contactIterator = 0;
 	return ;
 };
 
