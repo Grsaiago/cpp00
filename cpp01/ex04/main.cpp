@@ -6,14 +6,13 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 19:23:10 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/05/07 22:29:50 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/05/07 22:56:49 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <cstddef>
+#include <cstring>
 #include <iostream>
 #include <fstream>
-#include <cstring>
 #include <string>
 
 void	searchAndReplace(std::string &str, const char *search, const char *replace);
