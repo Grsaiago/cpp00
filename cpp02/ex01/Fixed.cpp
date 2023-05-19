@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 09:20:15 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/05/19 10:19:18 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/05/19 14:34:40 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,23 @@ Fixed::Fixed(void) : raw_value(0)
 	return ;
 }
 
-Fixed::Fixed(class Fixed &copy)
+Fixed::Fixed(class Fixed const &copy)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	this->raw_value = copy.getRawBits();
+	return ;
+}
+
+Fixed::Fixed(const int init) : raw_value(init << 8)
+{
+	std::cout << "Int constructor called" << std::endl;
+	return ;
+}
+
+Fixed::Fixed(const float init)
+{
+	std::cout << "Float constructor called" << std::endl;
+	this->raw_value = roundf(init * (1 << this->fraction));
 	return ;
 }
 
@@ -33,20 +46,31 @@ Fixed::~Fixed(void)
 
 int	Fixed::getRawBits(void) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
 	return (this->raw_value);
 }
 
 void	Fixed::setRawBits(int const raw)
 {
-	std::cout << "setRawBits member function called" << std::endl;
 	this->raw_value = raw;
 	return ;
 }
 
+int		Fixed::toInt(void) const
+{
+	return (this->raw_value >> this->fraction);
+}
+
 Fixed	&Fixed::operator=(Fixed const &rhs)
 {
-	std::cout << "Copy assignment operator called" << std::endl;
 	this->raw_value = rhs.getRawBits();
 	return (*this);
+}
+
+std::ostream	&operator<<(std::ostream &os, Fixed const &rhs)
+{
+	double	result;
+	
+	result = (double)rhs.getRawBits() / (double)(1 << 8);
+	os << result;
+	return (os);
 }
