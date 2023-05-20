@@ -6,11 +6,13 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 09:20:15 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/05/19 17:32:50 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/05/20 10:23:52 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+
+/* constructors / destructors */
 
 Fixed::Fixed(void) : raw_value(0)
 {
@@ -39,6 +41,8 @@ Fixed::~Fixed(void)
 	return ;
 }
 
+/* non static member functions */
+
 int	Fixed::getRawBits(void) const
 {
 	return (this->raw_value);
@@ -53,6 +57,36 @@ void	Fixed::setRawBits(int const raw)
 int		Fixed::toInt(void) const
 {
 	return (this->raw_value >> this->fraction);
+}
+
+/* static member functions */
+
+Fixed	&min(Fixed &a, Fixed &b)
+{
+	if (a.getRawBits() < b.getRawBits())
+		return (a);
+	return (b);
+}
+
+const Fixed	&Fixed::min(const Fixed &a, const Fixed &b)
+{
+	if (a.getRawBits() < b.getRawBits())
+		return (a);
+	return (b);
+}
+
+Fixed	&Fixed::max(Fixed &a, Fixed &b)
+{
+	if (b.getRawBits() > a.getRawBits())
+		return (b);
+	return (a);
+}
+
+const Fixed	&Fixed::max(const Fixed &a, const Fixed &b)
+{
+	if (a.getRawBits() > b.getRawBits())
+		return (a);
+	return (b);
 }
 
 /* comparadores */

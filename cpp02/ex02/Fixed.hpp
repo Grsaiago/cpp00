@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 15:16:12 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/05/19 17:16:36 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/05/20 10:21:42 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,10 @@ class Fixed
 		Fixed	operator--(int);
 		Fixed	operator*(Fixed const &rhs) const;
 		Fixed	operator/(Fixed const &rhs) const;
+		static Fixed		&min(Fixed &a, Fixed &b);
+		static const Fixed	&min(const Fixed &a, const Fixed &b);
+		static Fixed		&max(Fixed &a, Fixed &b);
+		static const Fixed	&max(const Fixed &a, const Fixed &b);
 	private:
 		int	raw_value;
 		static const int fraction = 8;
