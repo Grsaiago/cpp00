@@ -6,13 +6,14 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 12:16:31 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/05/21 12:18:17 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/05/21 20:45:46 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_HPP
 # define CONTACT_HPP
 # include <iostream>
+# include <ios>
 
 class	Contact
 {
@@ -34,5 +35,7 @@ class	Contact
 		std::string	phoneNumber;
 		std::string	darkestSecret;
 };
+
+bool	validateInput(std::string line, int (*f)(int));
 
 #endif
