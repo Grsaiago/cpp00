@@ -1,41 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/30 20:30:25 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/05/21 12:17:11 by gsaiago          ###   ########.fr       */
+/*   Created: 2023/05/21 12:16:31 by gsaiago           #+#    #+#             */
+/*   Updated: 2023/05/21 12:18:17 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONE_BOOK_HPP
-# define PHONE_BOOK_HPP
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
 # include <iostream>
-# include <iomanip>
-# include <cstdlib>
-# include "Contact.hpp"
 
-enum	e_phoneBook
-{
-	PB_MAX_CONTACTS = 8,
-	PB_MAX_WIDTH = 10
-};
-
-class	PhoneBook
+class	Contact
 {
 	public:
-		PhoneBook(void);
-		~PhoneBook(void);
+		Contact(void);
+		~Contact(void);
+		void	printContact(void) const;
+		void	printPreview(void) const;
 		void	addContact(void);
-		void	searchList(void) const;
+		void	addFirstName(void);
+		void	addLastName(void);
+		void	addNickname(void);
+		void	addPhoneNumber(void);
+		void	addDarkestSecret(void);
 	private:
-		Contact			contactList[PB_MAX_CONTACTS];
-		unsigned int	contactCount;
-		unsigned int	contactIterator;
+		std::string	firstName;
+		std::string	lastName;
+		std::string	nickname;
+		std::string	phoneNumber;
+		std::string	darkestSecret;
 };
-
-void	printWelcome(void);
 
 #endif

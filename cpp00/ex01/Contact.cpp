@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 20:29:52 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/05/01 19:15:55 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/05/21 12:43:57 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,8 @@ void	Contact::addFirstName(void)
 	{
 		err = 0;
 		len = this->firstName.length();
+		if (len < 1)
+			continue ;
 		for (unsigned int i = 0; i < len; i++)
 		{
 			if (!isalpha(this->firstName[i]))
@@ -124,6 +126,8 @@ void	Contact::addLastName(void)
 	{
 		err = 0;
 		len = this->lastName.length();
+		if (len < 1)
+			continue ;
 		for (unsigned int i = 0; i < len; i++)
 		{
 			if (!isalpha(this->lastName[i]))
@@ -157,6 +161,8 @@ void	Contact::addNickname(void)
 	{
 		err = 0;
 		len = this->nickname.length();
+		if (len < 1)
+			continue ;
 		for (unsigned int i = 0; i < len; i++)
 		{
 			if (!isalpha(this->nickname[i]))
@@ -189,6 +195,8 @@ void	Contact::addPhoneNumber(void)
 	{
 		err = 0;
 		len = this->phoneNumber.length();
+		if (len < 1)
+			continue ;
 		for (unsigned int i = 0; i < len; i++)
 		{
 			if (!isdigit(this->phoneNumber[i]))
@@ -222,6 +230,8 @@ void	Contact::addDarkestSecret(void)
 	{
 		err = 0;
 		len = this->darkestSecret.length();
+		if (len < 1)
+			continue ;
 		for (unsigned int i = 0; i < len; i++)
 		{
 			if (!isalpha(this->darkestSecret[i]))
