@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 20:29:52 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/05/21 20:53:20 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/05/22 16:45:28 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,9 +90,9 @@ void	Contact::addFirstName(void)
 	std::cout << "Choose your first name" << std::endl;
 	do
 	{
-		std::getline(std::cin, this->darkestSecret);
-	} while (!validateInput(this->darkestSecret, &isalpha));
-	len = this->darkestSecret.length();
+		std::getline(std::cin, this->firstName);
+	} while (!validateInput(this->firstName, &isalpha));
+	len = this->firstName.length();
 	for (unsigned int i = 1; i < len; i++)
 		this->firstName[i] = tolower(this->firstName[i]);
 	this->firstName[0] = toupper(this->firstName[0]);
@@ -107,9 +107,9 @@ void	Contact::addLastName(void)
 	std::cout << "Choose your last name" << std::endl;
 	do
 	{
-		std::getline(std::cin, this->darkestSecret);
-	} while (!validateInput(this->darkestSecret, &isalpha));
-	len = this->darkestSecret.length();
+		std::getline(std::cin, this->lastName);
+	} while (!validateInput(this->lastName, &isalpha));
+	len = this->lastName.length();
 	for (unsigned int i = 1; i < len; i++)
 		this->lastName[i] = tolower(this->lastName[i]);
 	this->lastName[0] = toupper(this->lastName[0]);
@@ -136,6 +136,7 @@ void	Contact::addNickname(void)
 
 void	Contact::addPhoneNumber(void)
 {
+	std::cout << "Input your number" << std::endl;
 	do
 	{
 		std::getline(std::cin, this->phoneNumber);
