@@ -6,7 +6,7 @@
 #    By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/07 19:30:15 by gsaiago           #+#    #+#              #
-#    Updated: 2023/05/08 12:55:01 by gsaiago          ###   ########.fr        #
+#    Updated: 2023/05/29 17:51:53 by gsaiago          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ NAME = harl
 SRCS = ./main.cpp\
 	   ./Harl.cpp\
 
-CC = g++
+CC = c++
 
 CFLAGS = -std=c++98 -g -Wall -Wextra -Werror
 
