@@ -6,7 +6,7 @@
 #    By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/04 22:51:35 by gsaiago           #+#    #+#              #
-#    Updated: 2023/05/04 22:54:17 by gsaiago          ###   ########.fr        #
+#    Updated: 2023/05/29 16:58:49 by gsaiago          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRCS = ./main.cpp\
 	   ./Zombie.cpp\
 	   ./ZombieHorde.cpp\
 
-CC = g++
+CC = c++
 
 CFLAGS = -std=c++98 -g -Wall -Wextra -Werror
 

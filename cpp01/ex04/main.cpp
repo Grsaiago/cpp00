@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 19:23:10 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/05/25 14:24:01 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/05/29 17:11:54 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,12 @@ int	main(int argc, char **argv)
 	}
 	new_file = argv[1]; 
 	input_stream.open(argv[1]);
-	if (!input_stream)
-	{
+	if (!input_stream) {
 		std::cout << "Error opening '" << new_file << "' or it doesn't exist." << std::endl;
 		return (0);
+	}
+	if (input_stream.peek() == std::ifstream::traits_type::eof()) {
+		std::cout << "Error! File '" << new_file << "' is empty." << std::endl;
 	}
 	new_file += ".replace";
 	output_stream.open(new_file.data());
