@@ -6,14 +6,13 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 12:42:42 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/05/29 18:21:57 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/05/29 18:21:58 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
-#include <string>
 
-ClapTrap::ClapTrap(void) : _name(), _hit_points(10), _energy_points(10), _attack_damage(0)
+ClapTrap::ClapTrap(void) : _name("default_clap"), _hit_points(10), _energy_points(10), _attack_damage(0)
 {
 	std::cout << "Hello, vault hunter! I have no idea who or what I am. Please end this torment" << std::endl;
 	return ;
@@ -21,7 +20,7 @@ ClapTrap::ClapTrap(void) : _name(), _hit_points(10), _energy_points(10), _attack
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _hit_points(10), _energy_points(10), _attack_damage(0)
 {
-	std::cout << "Hello, vault hunter! My name is: " << this->_name << std::endl;
+	std::cout << this->_name << ": Hello, vault hunter! I'm Clap used in a Scav's constructor!" << std::endl;
 	return ;
 }
 
@@ -48,7 +47,6 @@ void	ClapTrap::attack(const std::string& target)
 	}
 	else
 		std::cout << this->_name << ": Oof, I'm too <beep> tired to attack" << std::endl;
-
 	return ;
 }
 

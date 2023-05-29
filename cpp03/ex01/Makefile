@@ -5,15 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/05/07 19:30:15 by gsaiago           #+#    #+#              #
-#    Updated: 2023/05/29 17:57:56 by gsaiago          ###   ########.fr        #
+#    Created: 2023/05/22 12:41:40 by gsaiago           #+#    #+#              #
+#    Updated: 2023/05/29 13:02:06 by gsaiago          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-
-NAME = replace
+NAME =  ScavTrap
 
 SRCS = ./main.cpp\
+	   ./ClapTrap.cpp\
+	   ./ScavTrap.cpp\
 
 CC = c++
 
@@ -22,7 +23,7 @@ CFLAGS = -std=c++98 -g -Wall -Wextra -Werror
 all: $(NAME)
 
 $(NAME): $(SRCS)
-	$(CC) $(CFLAGS) $(SRCS) -o $(NAME) 
+	$(CC) $(CFLAGS) $(SRCS) -o $(NAME)
 
 clean:
 	@rm -f $(NAME)
@@ -30,4 +31,6 @@ clean:
 
 re: clean all
 
-.PHONY: all clean re
+flcean: clean
+
+.PHONY: all clean re fclean

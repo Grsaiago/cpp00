@@ -6,7 +6,7 @@
 #    By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/04 22:51:35 by gsaiago           #+#    #+#              #
-#    Updated: 2023/05/04 23:30:20 by gsaiago          ###   ########.fr        #
+#    Updated: 2023/05/29 17:57:55 by gsaiago          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = example
 
 SRCS = ./main.cpp\
 
-CC = g++
+CC = c++
 
 CFLAGS = -std=c++98 -g -Wall -Wextra -Werror
 
