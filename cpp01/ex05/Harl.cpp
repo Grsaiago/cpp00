@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 22:58:09 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/05/08 14:44:24 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/05/29 15:17:19 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,32 @@ Harl::~Harl(void)
 
 void	Harl::complain(std::string level)
 {
-	for (int i = 0; i < MAX_FUNCTIONS; i++)
+	int	i;
+
+	i = 0;
+	while (i < MAX_FUNCTIONS && level.compare(this->str_list[i]))
+			i++;
+	if (i < MAX_FUNCTIONS)
+		std::cout << "[ " << this->str_list[i] << " ]" << std::endl;
+	switch (i) 
 	{
-		if (level.compare(this->str_list[i]) == 0)
-		{
-			(this->*f[i])();
-			return ;
-		}
+		case 0:
+			(this->*f[0])();
+			break ;
+		case 1:
+			(this->*f[1])();
+			break ;
+		case 2:
+			(this->*f[2])();
+			break ;
+		case 3:
+			(this->*f[3])();
+			std::cout << std::endl;
+			break ;
+		default:
+			std::cout << "[There is no such complain]" << std::endl;
+			std::cout << std::endl;
+			break ;
 	}
 	return ;
 }
