@@ -6,13 +6,14 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 11:15:00 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/05/31 14:17:16 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/05/31 15:33:27 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(void) : ClapTrap(), _name("default_Frag")
+FragTrap::FragTrap(void) : ClapTrap()
 {
+	FragTrap::setName("default_Frag");
 	FragTrap::setHitPoints(100);
 	FragTrap::setEnergyPoints(50);
 	FragTrap::setAttackDamage(20);
@@ -20,8 +21,9 @@ FragTrap::FragTrap(void) : ClapTrap(), _name("default_Frag")
 	return ;
 }
 
-FragTrap::FragTrap(FragTrap	&cpy) : ClapTrap(), _name(cpy.getName() + "_clone")
+FragTrap::FragTrap(FragTrap	&cpy) : ClapTrap()
 {
+	FragTrap::setName(cpy.getName() + "_clone");
 	setHitPoints(cpy.getHitPoints());
 	setEnergyPoints(cpy.getEnergyPoints());
 	setAttackDamage(cpy.getAttackDamage());
@@ -29,8 +31,9 @@ FragTrap::FragTrap(FragTrap	&cpy) : ClapTrap(), _name(cpy.getName() + "_clone")
 	return ;
 }
 
-FragTrap::FragTrap(std::string name) : ClapTrap(name), _name(name)
+FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
+	FragTrap::setName(name);
 	FragTrap::setHitPoints(100);
 	FragTrap::setEnergyPoints(50);
 	FragTrap::setAttackDamage(20);

@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 12:20:33 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/05/31 14:30:07 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/05/31 16:51:46 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class ScavTrap : public virtual ClapTrap
 		virtual void		takeDamage(unsigned int amount);
 		virtual void		beRepaired(unsigned int amount);
 		virtual std::string	getName(void) const;
+		virtual void		setName(std::string name);
 		virtual int			getHitPoints(void) const;
 		virtual void		setHitPoints(long int ammount);
 		virtual int			getEnergyPoints(void) const;

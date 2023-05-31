@@ -6,12 +6,13 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 12:42:42 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/05/31 12:14:46 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/05/31 15:27:55 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int	main(void)
 {
@@ -39,9 +40,7 @@ int	main(void)
 
 	std::cout << "== test case 2 ==" << std::endl;
 	{
-		FragTrap	s1;
-		FragTrap	s2("nomeTeste");
-		FragTrap	s3(s1);
+		DiamondTrap	s2("nomeTeste");
 
 		std::cout << s2.getName() << ": Hit points > " << s2.getHitPoints() << "\n" << "Energy points > " << s2.getEnergyPoints() << "\n" << "Attack damage > " << s2.getAttackDamage() << std::endl;
 		s2.ClapTrap::attack("name");

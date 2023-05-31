@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 14:27:18 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/05/31 14:29:47 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/05/31 15:36:24 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class FragTrap: public virtual ClapTrap
 		virtual void		takeDamage(unsigned int amount);
 		virtual void		beRepaired(unsigned int amount);
 		virtual std::string	getName(void) const;
+		virtual void		setName(std::string name) const;
 		virtual int			getHitPoints(void) const;
 		virtual void		setHitPoints(long int ammount);
 		virtual int			getEnergyPoints(void) const;

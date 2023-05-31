@@ -6,14 +6,15 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 12:30:54 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/05/31 11:55:50 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/05/31 14:13:56 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(void) : ClapTrap(), _name("default_Scav")
+ScavTrap::ScavTrap(void) : ClapTrap()
 {
+	ScavTrap::setName("default_Scav");
 	ScavTrap::setHitPoints(100);
 	ScavTrap::setEnergyPoints(50);
 	ScavTrap::setAttackDamage(20);
@@ -21,17 +22,19 @@ ScavTrap::ScavTrap(void) : ClapTrap(), _name("default_Scav")
 	return ;
 }
 
-ScavTrap::ScavTrap(ScavTrap	&cpy) : ClapTrap(), _name(cpy.getName() + "_clone")
+ScavTrap::ScavTrap(ScavTrap	&cpy) : ClapTrap()
 {
-	setHitPoints(cpy.getHitPoints());
-	setEnergyPoints(cpy.getEnergyPoints());
-	setAttackDamage(cpy.getAttackDamage());
+	ScavTrap::setName(cpy.getName() + "_clone");
+	ScavTrap::setHitPoints(cpy.getHitPoints());
+	ScavTrap::setEnergyPoints(cpy.getEnergyPoints());
+	ScavTrap::setAttackDamage(cpy.getAttackDamage());
 	std::cout << "Hello, vault hunter! I'm Scav: " << this->_name << std::endl;
 	return ;
 }
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap(name), _name(name)
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
+	ScavTrap::setName(name);
 	ScavTrap::setHitPoints(100);
 	ScavTrap::setEnergyPoints(50);
 	ScavTrap::setAttackDamage(20);
