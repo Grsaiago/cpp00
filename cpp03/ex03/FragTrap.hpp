@@ -1,44 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/22 12:42:42 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/05/31 14:21:17 by gsaiago          ###   ########.fr       */
+/*   Created: 2023/05/30 14:27:18 by gsaiago           #+#    #+#             */
+/*   Updated: 2023/05/31 14:29:47 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_H
-# define CLAPTRAP_H
-# include <iostream>
-# include <string>
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
+# include "ClapTrap.hpp"
 
-class ClapTrap
+class FragTrap: public virtual ClapTrap
 {
 	public:
-		ClapTrap(void);
-		ClapTrap(std::string name);
-		ClapTrap(const ClapTrap &cpy);
-		~ClapTrap(void);
+		FragTrap(void);
+		FragTrap(FragTrap &cpy);
+		FragTrap(std::string name);
+		~FragTrap(void);
 		virtual void		attack(const std::string& target);
 		virtual void		takeDamage(unsigned int amount);
 		virtual void		beRepaired(unsigned int amount);
 		virtual std::string	getName(void) const;
-		virtual void		setName(std::string name);
 		virtual int			getHitPoints(void) const;
 		virtual void		setHitPoints(long int ammount);
-		virtual void		setEnergyPoints(const unsigned int ammount);
 		virtual int			getEnergyPoints(void) const;
+		virtual void		setEnergyPoints(const unsigned int ammount);
 		virtual int			getAttackDamage(void) const;
 		virtual void		setAttackDamage(const unsigned int ammount);
-		ClapTrap	&operator=(ClapTrap const &rhs);
-	protected:
-		std::string	_name;
-		int			_hit_points;
-		int			_energy_points;
-		int			_attack_damage;
+		virtual void		highFiveGuys(void);
+		FragTrap	&operator=(FragTrap &rhs);
 };
-
 #endif

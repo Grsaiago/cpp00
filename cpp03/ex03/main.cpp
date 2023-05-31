@@ -6,12 +6,12 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 12:42:42 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/05/31 14:01:09 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/05/31 12:14:46 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int	main(void)
 {
@@ -39,12 +39,13 @@ int	main(void)
 
 	std::cout << "== test case 2 ==" << std::endl;
 	{
-		ScavTrap	s1;
-		ScavTrap	s2("nomeTeste");
-		ScavTrap	s3(s1);
+		FragTrap	s1;
+		FragTrap	s2("nomeTeste");
+		FragTrap	s3(s1);
 
 		std::cout << s2.getName() << ": Hit points > " << s2.getHitPoints() << "\n" << "Energy points > " << s2.getEnergyPoints() << "\n" << "Attack damage > " << s2.getAttackDamage() << std::endl;
 		s2.ClapTrap::attack("name");
+		s2.highFiveGuys();
 	}
 	return (0);
 }

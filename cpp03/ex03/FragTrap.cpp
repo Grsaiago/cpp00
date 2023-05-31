@@ -1,58 +1,55 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/29 12:30:54 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/05/31 14:13:56 by gsaiago          ###   ########.fr       */
+/*   Created: 2023/05/31 11:15:00 by gsaiago           #+#    #+#             */
+/*   Updated: 2023/05/31 13:49:44 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
-ScavTrap::ScavTrap(void) : ClapTrap()
+FragTrap::FragTrap(void) : ClapTrap(), _name("default_Frag")
 {
-	ScavTrap::setName("default_Scav");
-	ScavTrap::setHitPoints(100);
-	ScavTrap::setEnergyPoints(50);
-	ScavTrap::setAttackDamage(20);
+	FragTrap::setHitPoints(100);
+	FragTrap::setEnergyPoints(50);
+	FragTrap::setAttackDamage(20);
 	std::cout << "Hello, vault hunter! I'm Scav: " << this->_name << std::endl;
 	return ;
 }
 
-ScavTrap::ScavTrap(ScavTrap	&cpy) : ClapTrap()
+FragTrap::FragTrap(FragTrap	&cpy) : ClapTrap(), _name(cpy.getName() + "_clone")
 {
-	ScavTrap::setName(cpy.getName() + "_clone");
-	ScavTrap::setHitPoints(cpy.getHitPoints());
-	ScavTrap::setEnergyPoints(cpy.getEnergyPoints());
-	ScavTrap::setAttackDamage(cpy.getAttackDamage());
+	setHitPoints(cpy.getHitPoints());
+	setEnergyPoints(cpy.getEnergyPoints());
+	setAttackDamage(cpy.getAttackDamage());
+	std::cout << "Hello, vault hunter! I'm Frag " << this->_name << std::endl;
+	return ;
+}
+
+FragTrap::FragTrap(std::string name) : ClapTrap(name), _name(name)
+{
+	FragTrap::setHitPoints(100);
+	FragTrap::setEnergyPoints(50);
+	FragTrap::setAttackDamage(20);
 	std::cout << "Hello, vault hunter! I'm Scav: " << this->_name << std::endl;
 	return ;
 }
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
+FragTrap::~FragTrap(void)
 {
-	ScavTrap::setName(name);
-	ScavTrap::setHitPoints(100);
-	ScavTrap::setEnergyPoints(50);
-	ScavTrap::setAttackDamage(20);
-	std::cout << "Hello, vault hunter! I'm Scav: " << this->_name << std::endl;
+	std::cout << "FragTrap " << this->_name << " Clocking out!:" << std::endl;
 	return ;
 }
 
-ScavTrap::~ScavTrap(void)
-{
-	std::cout << "ScavTrap " << this->_name << " Clocking out!:" << std::endl;
-	return ;
-}
-
-void	ScavTrap::attack(const std::string& target)
+void	FragTrap::attack(const std::string& target)
 {
 	if (this->getEnergyPoints() > 0)
 	{
-		std::cout << "ScavTrap" << this->_name << " attacks " << target << ", causing " << this->_attack_damage << " points of damage!" << std::endl;
+		std::cout << "FragTrap" << this->_name << " attacks " << target << ", causing " << this->_attack_damage << " points of damage!" << std::endl;
 		this->setEnergyPoints(this->getEnergyPoints() - 1);
 	}
 	else
@@ -60,7 +57,7 @@ void	ScavTrap::attack(const std::string& target)
 	return ;
 }
 
-void	ScavTrap::takeDamage(unsigned int amount)
+void	FragTrap::takeDamage(unsigned int amount)
 {
 	if (this->getHitPoints() < 0)
 		std::cout<< this->_name << ": You <beep>ing idiot, shoot someone who's alive!!" << std::endl;
@@ -70,7 +67,7 @@ void	ScavTrap::takeDamage(unsigned int amount)
 	return ;
 }
 
-void	ScavTrap::beRepaired(unsigned int amount)
+void	FragTrap::beRepaired(unsigned int amount)
 {
 	if (this->getEnergyPoints() > 0)
 	{
@@ -82,45 +79,50 @@ void	ScavTrap::beRepaired(unsigned int amount)
 		std::cout << this->_name << ": Oof, I'm too <beep> tired to repair myself" << std::endl;
 }
 
-std::string ScavTrap::getName(void) const
+std::string FragTrap::getName(void) const
 {
 	return (this->_name);
 }
 
-
-int	ScavTrap::getHitPoints(void) const
+int	FragTrap::getHitPoints(void) const
 {
 	return (this->_hit_points);
 }
 
-void ScavTrap::setHitPoints(long int amount)
+void FragTrap::setHitPoints(long int amount)
 {
 	this->_hit_points = amount;
 	return ;
 }
 
-void	ScavTrap::setEnergyPoints(const unsigned int amount)
+void	FragTrap::setEnergyPoints(const unsigned int amount)
 {
 	this->_energy_points = amount;
 }
 
-int	ScavTrap::getEnergyPoints(void) const
+int	FragTrap::getEnergyPoints(void) const
 {
 	return (this->_energy_points);
 }
 
-int	ScavTrap::getAttackDamage(void) const
+int	FragTrap::getAttackDamage(void) const
 {
 	return (this->_attack_damage);
 }
 
-void	ScavTrap::setAttackDamage(const unsigned int ammount)
+void	FragTrap::setAttackDamage(const unsigned int ammount)
 {
 	this->_attack_damage = ammount;
 	return ;
 }
 
-ScavTrap	&ScavTrap::operator=(ScavTrap &rhs)
+void		FragTrap::highFiveGuys(void)
+{
+	std::cout << this->_name << ": Hey, guys! High Five" << std::endl;
+	return ;
+}
+
+FragTrap	&FragTrap::operator=(FragTrap &rhs)
 {
 	this->_name = rhs.getName();
 	this->_hit_points = rhs.getHitPoints();
