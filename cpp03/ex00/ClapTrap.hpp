@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 12:42:42 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/05/31 14:19:47 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/06/01 13:17:18 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ class ClapTrap
 		void		setName(std::string name);
 		int			getHitPoints(void) const;
 		void		setHitPoints(long int ammount);
-		void		setEnergyPoints(const unsigned int ammount);
 		int			getEnergyPoints(void) const;
+		void		setEnergyPoints(const unsigned int ammount);
 		int			getAttackDamage(void) const;
 		void		setAttackDamage(const unsigned int ammount);
 		ClapTrap	&operator=(ClapTrap const &rhs);

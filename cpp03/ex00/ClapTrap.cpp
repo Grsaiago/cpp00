@@ -6,12 +6,11 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 12:42:42 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/05/29 18:21:57 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/06/01 13:17:11 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
-#include <string>
 
 ClapTrap::ClapTrap(void) : _name(), _hit_points(10), _energy_points(10), _attack_damage(0)
 {
@@ -37,7 +36,6 @@ ClapTrap::~ClapTrap(void)
 	std::cout << "Claptrap " << this->_name << " clocking out!" << std::endl;
 	return ;
 }
-
 
 void	ClapTrap::attack(const std::string& target)
 {
@@ -79,6 +77,11 @@ std::string		ClapTrap::getName(void) const
 	return (this->_name);
 }
 
+void	ClapTrap::setName(std::string name)
+{
+	this->_name = name;
+	return ;
+}
 
 int	ClapTrap::getHitPoints(void) const
 {
@@ -91,14 +94,14 @@ void	ClapTrap::setHitPoints(long int amount)
 	return ;
 }
 
-void	ClapTrap::setEnergyPoints(const unsigned int amount)
-{
-	this->_energy_points = amount;
-}
-
 int	ClapTrap::getEnergyPoints(void) const
 {
 	return (this->_energy_points);
+}
+
+void	ClapTrap::setEnergyPoints(const unsigned int amount)
+{
+	this->_energy_points = amount;
 }
 
 int	ClapTrap::getAttackDamage(void) const
