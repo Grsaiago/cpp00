@@ -6,13 +6,20 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 12:42:42 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/05/31 15:27:55 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/06/01 16:09:27 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "FragTrap.hpp"
-#include "DiamondTrap.hpp"
+#include "./ClapTrap.hpp"
+#include "./FragTrap.hpp"
+#include "./DiamondTrap.hpp"
+
+void printName(ClapTrap *who);
+
+void printName(ClapTrap *who)
+{
+	std::cout << who->getName() << std::endl;
+}
 
 int	main(void)
 {
@@ -41,10 +48,19 @@ int	main(void)
 	std::cout << "== test case 2 ==" << std::endl;
 	{
 		DiamondTrap	s2("nomeTeste");
+		DiamondTrap *s3 = new DiamondTrap("meu nome");
+		ClapTrap	*s4 = new ClapTrap("clap em");
 
 		std::cout << s2.getName() << ": Hit points > " << s2.getHitPoints() << "\n" << "Energy points > " << s2.getEnergyPoints() << "\n" << "Attack damage > " << s2.getAttackDamage() << std::endl;
-		s2.ClapTrap::attack("name");
-		s2.highFiveGuys();
+//		s2.attack("o ar");
+//		s2.highFiveGuys();
+//		s2.guardGate();
+		s2.whoAmI();
+		printName(s3);
+		printName(s4);
+
+		delete s3;
+		delete s4;
 	}
 	return (0);
 }

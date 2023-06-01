@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 14:27:18 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/05/31 15:31:40 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/06/01 14:19:50 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,6 @@ class FragTrap: public ClapTrap
 		FragTrap(std::string name);
 		~FragTrap(void);
 		void		attack(const std::string& target);
-		void		takeDamage(unsigned int amount);
-		void		beRepaired(unsigned int amount);
-		std::string	getName(void) const;
-		void		setName(std::string name);
-		int			getHitPoints(void) const;
-		void		setHitPoints(long int ammount);
-		int			getEnergyPoints(void) const;
-		void		setEnergyPoints(const unsigned int ammount);
-		int			getAttackDamage(void) const;
-		void		setAttackDamage(const unsigned int ammount);
 		void		highFiveGuys(void);
 		FragTrap	&operator=(FragTrap &rhs);
 };

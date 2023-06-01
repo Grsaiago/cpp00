@@ -6,13 +6,13 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 12:42:42 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/05/31 14:12:17 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/06/01 14:14:41 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(void) : _name("default_clap"), _hit_points(10), _energy_points(10), _attack_damage(0)
+ClapTrap::ClapTrap(void) : _name(), _hit_points(10), _energy_points(10), _attack_damage(0)
 {
 	std::cout << "Hello, vault hunter! I have no idea who or what I am. Please end this torment" << std::endl;
 	return ;
@@ -20,7 +20,7 @@ ClapTrap::ClapTrap(void) : _name("default_clap"), _hit_points(10), _energy_point
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _hit_points(10), _energy_points(10), _attack_damage(0)
 {
-	std::cout << this->_name << ": Hello, vault hunter! I'm Clap used in a Scav's constructor!" << std::endl;
+	std::cout << "Hello, vault hunter! My name is: " << this->_name << std::endl;
 	return ;
 }
 
@@ -37,16 +37,16 @@ ClapTrap::~ClapTrap(void)
 	return ;
 }
 
-
 void	ClapTrap::attack(const std::string& target)
 {
 	if (this->getEnergyPoints() > 0)
 	{
-		std::cout << "ClapTrap " << this->_name << " attacks " << target << ", causing " << this->_attack_damage << " points of damage!" << std::endl;
+		std::cout << "< ClapTrap > " << this->_name << " attacks " << target << ", causing " << this->_attack_damage << " points of damage!" << std::endl;
 		this->setEnergyPoints(this->getEnergyPoints() - 1);
 	}
 	else
 		std::cout << this->_name << ": Oof, I'm too <beep> tired to attack" << std::endl;
+
 	return ;
 }
 
@@ -77,7 +77,7 @@ std::string		ClapTrap::getName(void) const
 	return (this->_name);
 }
 
-void ClapTrap::setName(std::string name)
+void	ClapTrap::setName(std::string name)
 {
 	this->_name = name;
 	return ;
@@ -94,14 +94,14 @@ void	ClapTrap::setHitPoints(long int amount)
 	return ;
 }
 
-void	ClapTrap::setEnergyPoints(const unsigned int amount)
-{
-	this->_energy_points = amount;
-}
-
 int	ClapTrap::getEnergyPoints(void) const
 {
 	return (this->_energy_points);
+}
+
+void	ClapTrap::setEnergyPoints(const unsigned int amount)
+{
+	this->_energy_points = amount;
 }
 
 int	ClapTrap::getAttackDamage(void) const
