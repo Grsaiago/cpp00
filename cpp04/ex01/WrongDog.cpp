@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 10:04:46 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/06/02 13:55:35 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/06/02 17:32:46 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,28 +16,41 @@
 
 WrongDog::WrongDog(void) : WrongAnimal()
 {
+	std::cout << "A WrongDog is being constructed (?)" << std::endl;
 	this->setType("WrongDog");
 	this->_brain = new Brain();
-	std::cout << "A WrongDog is being constructed (?)" << std::endl;
 	return ;
 }
 
 WrongDog::WrongDog(std::string type) : WrongAnimal(type)
 {
+	std::cout << "A WrongDog is being constructed (?)" << std::endl;
 	this->setType("WrongDog");
 	this->_brain = new Brain();
-	std::cout << "A WrongDog is being constructed (?)" << std::endl;
+	return ;
+}
+
+WrongDog::WrongDog(const WrongDog &cpy) : WrongAnimal()
+{
+	std::cout << "A WrongDog is being copy constructed (?)" << std::endl;
+	this->setType(cpy.getType());
+	this->_brain = new Brain(*cpy._brain);
 	return ;
 }
 
 WrongDog::~WrongDog(void)
 {
-	delete this->_brain;
 	std::cout << "A WrongDog is being destructed (?)" << std::endl;
+	delete this->_brain;
 	return ;
 }
 
-//WrongDog::WrongDog(const WrongDog &cpy)
+WrongDog	&WrongDog::operator=(const WrongDog &rhs)
+{
+	this->setType(rhs.getType());
+	this->_brain = rhs._brain;
+	return (*this);
+}
 
 void	WrongDog::makeSound(void) const
 {

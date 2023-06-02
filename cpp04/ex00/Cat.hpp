@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 18:35:37 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/06/01 18:48:35 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/06/02 16:38:57 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,9 @@ class Cat : public Animal
 	public:
 		Cat(void);
 		Cat(std::string type);
-//		Cat(const Cat &cpy);
+		Cat(const Cat &cpy);
 		~Cat(void);
+		Cat	&operator=(const Cat &rhs);
 		virtual void	makeSound(void) const;
 };
 #endif

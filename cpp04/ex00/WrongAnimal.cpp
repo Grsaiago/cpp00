@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 09:57:40 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/06/02 09:58:48 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/06/02 17:01:00 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,26 @@ WrongAnimal::WrongAnimal(std::string type) : _type(type)
 	return ;
 }
 
-//WrognAnimal::WrongAnimal(const Animal &cpy)
-
-std::string 	WrongAnimal::getType(void) const
+WrongAnimal::WrongAnimal(const WrongAnimal &cpy)
 {
-	return (this->_type);
+	this->setType(cpy.getType());
+	return ;
 }
 
 WrongAnimal::~WrongAnimal(void)
 {
 	return ;
+}
+
+WrongAnimal	&WrongAnimal::operator=(const WrongAnimal &rhs)
+{
+	this->setType(rhs.getType());
+	return (*this);
+}
+
+std::string 	WrongAnimal::getType(void) const
+{
+	return (this->_type);
 }
 
 void	WrongAnimal::setType(std::string new_type)

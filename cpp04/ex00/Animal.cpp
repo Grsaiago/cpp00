@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 18:39:50 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/06/01 19:03:57 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/06/02 16:45:43 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,11 @@ Animal::Animal(std::string type) : _type(type)
 	return ;
 }
 
-//Animal::Animal(const Animal &cpy)
+Animal::Animal(const Animal &cpy)
+{
+	this->setType(cpy.getType());
+	return ;
+}
 
 std::string 	Animal::getType(void) const
 {
@@ -32,6 +36,12 @@ std::string 	Animal::getType(void) const
 Animal::~Animal(void)
 {
 	return ;
+}
+
+Animal	&Animal::operator=(const Animal &rhs)
+{
+	this->setType(rhs.getType());
+	return (*this);
 }
 
 void	Animal::setType(std::string new_type)

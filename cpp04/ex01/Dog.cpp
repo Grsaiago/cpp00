@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 18:53:27 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/06/02 14:00:23 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/06/02 17:32:52 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,14 @@ Dog::Dog(std::string type) : Animal(type)
 	return ;
 }
 
+Dog::Dog(const Dog &cpy) : Animal()
+{
+	std::cout << "A Dog is being copy destructed" << std::endl;
+	this->setType(cpy.getType());
+	this->_brain = new Brain(*cpy._brain);
+	return ;
+}
+
 Dog::~Dog(void)
 {
 	std::cout << "A Dog is being destructed" << std::endl;
@@ -35,7 +43,12 @@ Dog::~Dog(void)
 	return ;
 }
 
-//Dog::Dog(const Dog &cpy)
+Dog	&Dog::operator=(const Dog &rhs)
+{
+	this->setType(rhs.getType());
+	this->_brain = rhs._brain;
+	return (*this);
+}
 
 void	Dog::makeSound(void) const
 {

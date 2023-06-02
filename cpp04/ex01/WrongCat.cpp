@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 10:00:52 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/06/02 14:00:45 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/06/02 17:25:48 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,14 @@ WrongCat::WrongCat(std::string type) : WrongAnimal(type)
 	return ;
 }
 
+WrongCat::WrongCat(const WrongCat &cpy) : WrongAnimal()
+{
+	std::cout << "A WrongCat is being copy constructed (?)" << std::endl;
+	this->setType(cpy.getType());
+	this->_brain = cpy._brain;
+	return ;
+}
+
 WrongCat::~WrongCat(void)
 {
 	std::cout << "A WrongCat is being destructed (?)" << std::endl;
@@ -37,7 +45,12 @@ WrongCat::~WrongCat(void)
 	return ;
 }
 
-//WrongCat::WrongCat(const Animal &cpy)
+WrongCat	&WrongCat::operator=(const WrongCat &rhs)
+{
+	this->setType(rhs.getType());
+	this->_brain = rhs._brain;
+	return (*this);
+}
 
 void	WrongCat::makeSound(void) const
 {
