@@ -6,7 +6,7 @@
 #    By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/01 18:57:34 by gsaiago           #+#    #+#              #
-#    Updated: 2023/06/02 10:14:41 by gsaiago          ###   ########.fr        #
+#    Updated: 2023/06/03 12:43:40 by gsaiago          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,7 @@ $(NAME): $(SRCS) $(INCLUDES)
 
 clean:
 	rm -rf $(NAME).dSYM
-	rm $(NAME)
+	rm -f $(NAME)
 
 re: clean all
 

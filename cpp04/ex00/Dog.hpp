@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 18:37:49 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/06/02 16:48:26 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/06/03 12:22:34 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ class Dog : public Animal
 {
 	public:
 		Dog(void);
-		Dog(std::string type);
 		Dog(const Dog &cpy);
 		~Dog(void);
 		Dog	&operator=(const Dog &rhs);

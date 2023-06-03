@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 10:04:46 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/06/02 17:32:46 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/06/03 12:26:29 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,6 @@
 #include "Brain.hpp"
 
 WrongDog::WrongDog(void) : WrongAnimal()
-{
-	std::cout << "A WrongDog is being constructed (?)" << std::endl;
-	this->setType("WrongDog");
-	this->_brain = new Brain();
-	return ;
-}
-
-WrongDog::WrongDog(std::string type) : WrongAnimal(type)
 {
 	std::cout << "A WrongDog is being constructed (?)" << std::endl;
 	this->setType("WrongDog");

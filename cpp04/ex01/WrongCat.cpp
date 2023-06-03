@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 10:00:52 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/06/02 17:25:48 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/06/03 12:27:47 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,6 @@
 #include "Brain.hpp"
 
 WrongCat::WrongCat(void) : WrongAnimal()
-{
-	std::cout << "A WrongCat is being constructed (?)" << std::endl;
-	this->setType("WrongCat");
-	this->_brain = new Brain();
-	return ;
-}
-
-WrongCat::WrongCat(std::string type) : WrongAnimal(type)
 {
 	std::cout << "A WrongCat is being constructed (?)" << std::endl;
 	this->setType("WrongCat");

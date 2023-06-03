@@ -6,19 +6,13 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 09:57:40 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/06/02 17:32:54 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/06/03 12:27:33 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongAnimal.hpp"
 
 WrongAnimal::WrongAnimal(void) : _type("default")
-{
-	std::cout << "A WrongAnimal is being constructed (?)" << std::endl;
-	return ;
-}
-
-WrongAnimal::WrongAnimal(std::string type) : _type(type)
 {
 	std::cout << "A WrongAnimal is being constructed (?)" << std::endl;
 	return ;

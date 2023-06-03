@@ -6,18 +6,13 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 09:57:40 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/06/02 17:01:00 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/06/03 12:22:36 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongAnimal.hpp"
 
 WrongAnimal::WrongAnimal(void) : _type("default")
-{
-	return ;
-}
-
-WrongAnimal::WrongAnimal(std::string type) : _type(type)
 {
 	return ;
 }

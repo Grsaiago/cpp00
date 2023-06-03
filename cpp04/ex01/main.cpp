@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 18:39:51 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/06/02 14:05:28 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/06/03 12:40:42 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ int	main(void)
 		delete(d1);
 		std::cout << std::endl;
 	}
+	/*
 	std::cout << "==== Test 2 =====" << std::endl;
 	{
 		std::cout << "== WrongAnimal Creation ==" << std::endl;
@@ -70,5 +71,6 @@ int	main(void)
 		std::cout << "== WrongDog Destruction ==" << std::endl;
 		delete(d1);
 	}
+	*/
 	return (0);
 }

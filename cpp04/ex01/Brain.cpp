@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 21:35:05 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/06/02 17:24:38 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/06/03 12:34:00 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,4 +75,3 @@ Brain &Brain::operator=(const Brain &rhs)
 		this->setIdea(rhs.getIdea(i), i);
 	return (*this);
 }
-

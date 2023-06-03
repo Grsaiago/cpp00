@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 09:59:25 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/06/02 17:01:02 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/06/03 12:27:50 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ class WrongCat : public WrongAnimal
 {
 	public:
 		WrongCat(void);
-		WrongCat(std::string type);
 		WrongCat(const WrongCat &cpy);
 		~WrongCat(void);
 		WrongCat	&operator=(const WrongCat &rhs);

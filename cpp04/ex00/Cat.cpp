@@ -6,19 +6,13 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 18:39:50 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/06/02 16:53:01 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/06/03 12:22:29 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
 Cat::Cat(void) : Animal()
-{
-	this->setType("Cat");
-	return ;
-}
-
-Cat::Cat(std::string type) : Animal(type)
 {
 	this->setType("Cat");
 	return ;
