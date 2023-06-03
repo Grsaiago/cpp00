@@ -6,7 +6,7 @@
 #    By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/19 09:20:27 by gsaiago           #+#    #+#              #
-#    Updated: 2023/05/19 10:08:08 by gsaiago          ###   ########.fr        #
+#    Updated: 2023/06/03 11:10:26 by gsaiago          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = a.out
 SRCS = ./main.cpp\
 	   ./Fixed.cpp\
 
-CC = g++
+CC = c++
 
 CFLAGS = -std=c++98 -g -Wall -Wextra -Werror
 
@@ -30,4 +30,6 @@ clean:
 
 re: clean all
 
-.PHONY: all clean re
+fclean: clean
+
+.PHONY: all clean re fclean

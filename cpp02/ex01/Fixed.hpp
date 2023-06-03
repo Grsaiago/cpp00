@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 15:16:12 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/05/19 13:46:49 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/06/03 11:07:36 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Fixed
 {
 	public:
 		Fixed(void);
-		Fixed(class Fixed const &copy);
+		Fixed(Fixed const &copy);
 		Fixed(const int init);
 		Fixed(const float init);
 		~Fixed(void);
