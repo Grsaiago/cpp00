@@ -6,7 +6,7 @@
 #    By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/22 12:41:40 by gsaiago           #+#    #+#              #
-#    Updated: 2023/05/22 17:06:13 by gsaiago          ###   ########.fr        #
+#    Updated: 2023/06/03 11:11:29 by gsaiago          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = a.out
 SRCS = ./main.cpp\
 	   ./ClapTrap.cpp\
 
-CC = g++
+CC = c++
 
 CFLAGS = -std=c++98 -g -Wall -Wextra #-Werror
 
@@ -30,4 +30,6 @@ clean:
 
 re: clean all
 
-.PHONY: all clean re
+fclean: clean
+
+.PHONY: all clean re fclean

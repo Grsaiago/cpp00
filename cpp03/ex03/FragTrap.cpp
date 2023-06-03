@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 11:15:00 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/06/01 14:43:11 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/06/03 11:30:58 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "FragTrap.hpp"
@@ -17,11 +17,11 @@ FragTrap::FragTrap(void) : ClapTrap()
 	FragTrap::setHitPoints(100);
 	FragTrap::setEnergyPoints(50);
 	FragTrap::setAttackDamage(20);
-	std::cout << "Hello, vault hunter! I'm Scav: " << this->_name << std::endl;
+	std::cout << "Hello, vault hunter! I'm Frag " << this->_name << std::endl;
 	return ;
 }
 
-FragTrap::FragTrap(FragTrap	&cpy) : ClapTrap()
+FragTrap::FragTrap(FragTrap	&cpy) : ClapTrap(cpy.getName())
 {
 	FragTrap::setName(cpy.getName() + "_clone");
 	FragTrap::setHitPoints(cpy.getHitPoints());
@@ -37,7 +37,7 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
 	FragTrap::setHitPoints(100);
 	FragTrap::setEnergyPoints(50);
 	FragTrap::setAttackDamage(20);
-	std::cout << "Hello, vault hunter! I'm Scav: " << this->_name << std::endl;
+	std::cout << "Hello, vault hunter! I'm Frag: " << this->_name << std::endl;
 	return ;
 }
 

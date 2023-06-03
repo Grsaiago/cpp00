@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 12:42:42 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/06/01 16:09:27 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/06/03 12:12:32 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,15 @@
 #include "./DiamondTrap.hpp"
 
 void printName(ClapTrap *who);
+void	printInfo(const DiamondTrap &who);
+
+void	printInfo(const DiamondTrap &who)
+{
+	std::cout << who.getName() << ": Clap name > " << who.ClapTrap::getName() << std::endl;
+	std::cout << who.getName() << ": Hit points > " << who.getHitPoints() << std::endl;
+	std::cout << who.getName() << ": Energy points > " << who.getEnergyPoints() << std::endl;
+	std::cout << who.getName() << ": Attack Damage > " << who.getAttackDamage() << std::endl;
+}
 
 void printName(ClapTrap *who)
 {
@@ -47,20 +56,28 @@ int	main(void)
 
 	std::cout << "== test case 2 ==" << std::endl;
 	{
-		DiamondTrap	s2("nomeTeste");
-		DiamondTrap *s3 = new DiamondTrap("meu nome");
-		ClapTrap	*s4 = new ClapTrap("clap em");
+		DiamondTrap	s2("s2");
+		DiamondTrap *s3 = new DiamondTrap("s3");
 
-		std::cout << s2.getName() << ": Hit points > " << s2.getHitPoints() << "\n" << "Energy points > " << s2.getEnergyPoints() << "\n" << "Attack damage > " << s2.getAttackDamage() << std::endl;
-//		s2.attack("o ar");
+		std::cout << "==== s2 info ====" << std::endl;
+		printInfo(s2);
+		std::cout << "==== s3 info ====" << std::endl;
+		printInfo(*s3);
+		std::cout << "==== s2 attack ====" << std::endl;
+		s2.attack("o ar");
+		std::cout << "==== 's2 = *s3' ====" << std::endl;
+		s2 = *s3;
+		std::cout << "==== s2 info ====" << std::endl;
+		printInfo(s2);
+		std::cout << "==== s3 info ====" << std::endl;
+		printInfo(*s3);
+		std::cout << "==== both whoAmI ====" << std::endl;
+		s2.whoAmI();
+		s3->whoAmI();
 //		s2.highFiveGuys();
 //		s2.guardGate();
-		s2.whoAmI();
-		printName(s3);
-		printName(s4);
 
 		delete s3;
-		delete s4;
 	}
 	return (0);
 }

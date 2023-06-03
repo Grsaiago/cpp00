@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 12:30:54 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/06/01 14:14:52 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/06/03 11:30:43 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ ScavTrap::ScavTrap(void) : ClapTrap()
 	return ;
 }
 
-ScavTrap::ScavTrap(ScavTrap	&cpy) : ClapTrap()
+ScavTrap::ScavTrap(ScavTrap	&cpy) : ClapTrap(cpy.getName())
 {
 	ScavTrap::setName(cpy.getName() + "_clone");
 	ScavTrap::setHitPoints(cpy.getHitPoints());
