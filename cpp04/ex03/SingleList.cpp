@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 21:06:24 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/06/04 22:20:33 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/06/04 22:29:59 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,4 +107,5 @@ void	SingleList::clearList(void)
 		node = node->_next;
 		delete (aux);
 	}
+	return ;
 }
