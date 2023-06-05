@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 17:40:49 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/06/03 17:41:24 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/06/04 23:01:30 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,7 @@ class Cure : public AMateria
 		Cure(void);
 		Cure(const Cure &cpy);
 		virtual ~Cure(void);
-		std::string	const	&getType(void) const;
-		void				setType(std::string const &newtype);
+		virtual AMateria	&operator=(const AMateria &rhs);
 
 		virtual	AMateria	*clone(void);
 		virtual	void		use(ICharacter &target);

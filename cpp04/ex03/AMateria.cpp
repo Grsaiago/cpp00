@@ -1,31 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/03 17:28:47 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/06/04 23:02:19 by gsaiago          ###   ########.fr       */
+/*   Created: 2023/06/04 22:54:35 by gsaiago           #+#    #+#             */
+/*   Updated: 2023/06/04 22:58:43 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICE_HPP
-# define ICE_HPP
-# include "AMateria.hpp"
+#include "AMateria.hpp"
 
-class Ice : public AMateria
+AMateria::AMateria(void)
 {
-	public:
-		Ice(void);
-		Ice(const Ice &cpy);
-		virtual ~Ice(void);
-		std::string	const	&getType(void) const;
-		void				setType(std::string const &newtype);
-		virtual AMateria	&operator=(const AMateria &rhs);
+	this->_type = "default";
+	return ;
+}
 
-		virtual	AMateria	*clone(void);
-		virtual	void		use(ICharacter &target);
-};
+AMateria::AMateria(std::string const &type)
+{
+	this->_type = type;
+	return ;
+}
 
-#endif
+AMateria::~AMateria(void) {};
+
+std::string	const	&AMateria::getType(void) const
+{
+	return (this->_type);
+}
+
+void	AMateria::setType(std::string const &newtype)
+{
+	this->_type = newtype;
+	return ;
+}

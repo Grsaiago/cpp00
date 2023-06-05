@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/03 17:28:47 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/06/04 23:02:19 by gsaiago          ###   ########.fr       */
+/*   Created: 2023/06/04 22:35:42 by gsaiago           #+#    #+#             */
+/*   Updated: 2023/06/04 23:03:40 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICE_HPP
-# define ICE_HPP
-# include "AMateria.hpp"
+#include "Cure.hpp"
 
-class Ice : public AMateria
+
+Cure::Cure(void)
 {
-	public:
-		Ice(void);
-		Ice(const Ice &cpy);
-		virtual ~Ice(void);
-		std::string	const	&getType(void) const;
-		void				setType(std::string const &newtype);
-		virtual AMateria	&operator=(const AMateria &rhs);
 
-		virtual	AMateria	*clone(void);
-		virtual	void		use(ICharacter &target);
-};
 
-#endif
+}
+
+Cure::Cure(const Cure &cpy);
+Cure::~Cure(void);
+std::string	const	&Cure::getType(void) const;
+void	Cure::setType(std::string const &newtype);
+
+AMateria	*Cure::clone(void);
+void	Cure::use(ICharacter &target);
