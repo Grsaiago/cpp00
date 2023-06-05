@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 17:51:58 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/06/04 23:21:13 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/06/04 23:29:26 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,15 +53,31 @@ void	Character::setName(const std::string newname)
 	this->_name = newname;
 	return ;
 }
-void 				Character::equip(AMateria* materia)
+
+void 	Character::equip(AMateria* materia)
 {
+	unsigned int idx;
 
-
+	if (materia == NULL)
+		return ;
+	idx = 0;
+	while (idx < 4)
+	{
+		if (this->_inventory[idx] == NULL)
+			break ;
+	}
+	if (idx == 4)
+	{
+		delete materia;
+		return ;
+	}
+	else
+		this->_inventory[idx] = materia;
 }
 
-void 				Character::unequip(int idx)
+void 	Character::unequip(int idx)
 {
-	if (idx < 0 || idx > 3)
+	if (idx < 0 || idx >= 4)
 		return ;
 	if (this->_ground == NULL)
 		this->_ground = new SingleList(*this->_inventory[idx]);
@@ -71,4 +87,7 @@ void 				Character::unequip(int idx)
 	return ;
 }
 
-void 				Character::use(int idx, ICharacter& target);
+void 	Character::use(int idx, ICharacter& target)
+{
+
+}
