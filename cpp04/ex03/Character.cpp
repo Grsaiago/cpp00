@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 17:51:58 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/06/03 18:01:35 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/06/04 23:10:09 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 Character::Character(void) : _name("default")
 {
 	for (int i; i < 4; i++)
-		this->inventory[i] = nullptr;
+		this->_inventory[i] = nullptr;
 	return ;
 }
 
 Character::Character(std::string name) : _name(name)
 {
 	for (int i; i < 4; i++)
-		this->inventory[i] = nullptr;
+		this->_inventory[i] = nullptr;
 	return ;
 }
 
@@ -34,8 +34,8 @@ Character::~Character(void)
 	//se for 0 limpar a linked list com as materias do chão.
 	for (int i; i < 4; i++)
 	{
-		if (this->inventory[i] != nullptr)
-			delete (inventory[i]);
+		if (this->_inventory[i] != nullptr)
+			delete (_inventory[i]);
 	}
 	return ;
 }
