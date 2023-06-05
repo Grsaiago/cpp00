@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 17:14:42 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/06/04 20:41:25 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/06/04 23:22:36 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Character : public ICharacter
 		virtual ~Character(void);
 		virtual std::string const	&getName(void) const;
 		virtual void				setName(const std::string newname);
-		virtual void 				equip(AMateria* m);
+		virtual void 				equip(AMateria* materia);
 		virtual void 				unequip(int idx);
 		virtual void 				use(int idx, ICharacter& target);
 
