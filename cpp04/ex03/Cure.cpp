@@ -6,23 +6,34 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 22:35:42 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/06/04 23:03:40 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/06/05 21:53:07 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
+#include "Character.hpp"
 
+Cure::Cure(void) : AMateria("Cure") {}
 
-Cure::Cure(void)
+Cure::Cure(const Cure &cpy) : AMateria("Cure")
 {
-
-
+	this->setType(cpy.getType());
 }
 
-Cure::Cure(const Cure &cpy);
-Cure::~Cure(void);
-std::string	const	&Cure::getType(void) const;
-void	Cure::setType(std::string const &newtype);
+Cure::~Cure(void) {};
 
-AMateria	*Cure::clone(void);
-void	Cure::use(ICharacter &target);
+AMateria	*Cure::clone(void) const
+{
+	return (new Cure(*this));
+}
+
+void	Cure::use(ICharacter &target) const
+{
+	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
+	return ;
+}
+
+AMateria	&Cure::operator=(const AMateria &rhs)
+{
+	return (*rhs.clone());
+}
