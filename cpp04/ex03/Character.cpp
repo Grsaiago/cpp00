@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 17:51:58 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/06/05 23:07:27 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/06/05 23:23:41 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ Character::Character(std::string name) : _name(name)
 {
 	for (int i = 0; i < 4; i++)
 		this->_inventory[i] = NULL;
+	this->_party_members++;
 	return ;
 }
 
@@ -41,6 +42,7 @@ Character::Character(const Character &cpy)
 			this->_inventory[i] = NULL;
 	}
 	this->_name = cpy._name;
+	this->_party_members++;
 	return ;
 }
 
@@ -53,7 +55,10 @@ Character::~Character(void)
 	}
 	this->_party_members--;
 	if (this->_party_members == 0 && this->_ground != NULL)
+	{
 		this->_ground->clearList();
+		this->_ground = NULL;
+	}
 	return ;
 }
 
