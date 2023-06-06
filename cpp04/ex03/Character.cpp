@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 17:51:58 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/06/05 23:23:41 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/06/06 19:31:33 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,7 @@ void 	Character::equip(AMateria* materia)
 	{
 		if (this->_inventory[idx] == NULL)
 			break ;
+		idx++;
 	}
 	if (idx == 4)
 	{
