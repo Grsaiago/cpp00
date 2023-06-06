@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 17:51:58 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/06/04 23:29:26 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/06/05 22:44:43 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 Character::Character(void) : _name("default")
 {
-	for (int i; i < 4; i++)
+	for (int i = 0; i < 4; i++)
 		this->_inventory[i] = NULL;
 	this->_party_members++;
 	return ;
@@ -23,16 +23,27 @@ Character::Character(void) : _name("default")
 
 Character::Character(std::string name) : _name(name)
 {
-	for (int i; i < 4; i++)
+	for (int i = 0; i < 4; i++)
 		this->_inventory[i] = NULL;
 	return ;
 }
 
-//	Character(Character &cpy);
+Character::Character(const Character &cpy)
+{
+	for (int i = 0; i < 4; i++)
+	{
+		if (cpy._inventory[i] != NULL)
+			this->_inventory[i] = cpy._inventory[i]->clone();
+		else
+			this->_inventory[i] = NULL;
+	}
+	this->_name = cpy._name;
+	return ;
+}
 
 Character::~Character(void)
 {
-	for (int i; i < 4; i++)
+	for (int i = 0; i < 4; i++)
 	{
 		if (this->_inventory[i] != NULL)
 			delete (_inventory[i]);
@@ -89,5 +100,15 @@ void 	Character::unequip(int idx)
 
 void 	Character::use(int idx, ICharacter& target)
 {
-
+	if (idx >= 4 || idx < 0)
+	{
+		std::cout << "Out of range spell" << std::endl;
+		return ;
+	}
+	if (this->_inventory[idx] != NULL)
+	{
+		std::cout << this->getName();
+		this->_inventory[idx]->use(target);
+	}
+	return ;
 }

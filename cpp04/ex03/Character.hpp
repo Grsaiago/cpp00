@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 17:14:42 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/06/04 23:22:36 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/06/05 22:42:06 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Character : public ICharacter
 	public :
 		Character(void);
 		Character(std::string name);
-	//	Character(Character &cpy);
+		Character(const Character &cpy);
 		virtual ~Character(void);
 		virtual std::string const	&getName(void) const;
 		virtual void				setName(const std::string newname);
