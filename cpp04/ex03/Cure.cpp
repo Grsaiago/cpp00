@@ -6,16 +6,16 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 22:35:42 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/06/05 22:08:22 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/06/06 19:31:49 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
 #include "Character.hpp"
 
-Cure::Cure(void) : AMateria("Cure") {}
+Cure::Cure(void) : AMateria("cure") {}
 
-Cure::Cure(const Cure &cpy) : AMateria("Cure")
+Cure::Cure(const Cure &cpy) : AMateria("cure")
 {
 	this->setType(cpy.getType());
 }
@@ -29,7 +29,7 @@ AMateria	*Cure::clone(void) const
 
 void	Cure::use(ICharacter &target) const
 {
-	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
+	std::cout << " * heals " << target.getName() << "'s wounds *" << std::endl;
 	return ;
 }
 
