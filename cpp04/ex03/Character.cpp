@@ -6,12 +6,15 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 17:51:58 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/06/05 22:44:43 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/06/05 23:07:27 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 #include "SingleList.hpp"
+
+SingleList *Character::_ground = NULL;
+unsigned int Character::_party_members = 0;
 
 Character::Character(void) : _name("default")
 {
