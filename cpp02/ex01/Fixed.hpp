@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 15:16:12 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/06/03 11:07:36 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/06/09 17:41:46 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class Fixed
 		int		getRawBits(void) const;
 		void	setRawBits(int const raw);
 		int		toInt(void) const;
+		float	toFloat(void) const;
 		Fixed	&operator=(Fixed const &rhs);
 	private:
 		int	raw_value;

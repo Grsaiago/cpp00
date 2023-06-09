@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 09:20:15 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/05/19 14:34:40 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/06/09 17:44:40 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,14 @@ void	Fixed::setRawBits(int const raw)
 int		Fixed::toInt(void) const
 {
 	return (this->raw_value >> this->fraction);
+}
+
+float	Fixed::toFloat(void) const
+{
+	float	ret;
+
+	ret = (float)getRawBits() / (float)(1 << 8);
+	return (ret);
 }
 
 Fixed	&Fixed::operator=(Fixed const &rhs)
