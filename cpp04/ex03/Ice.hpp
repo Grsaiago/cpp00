@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 17:28:47 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/06/05 22:59:08 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/06/10 11:44:35 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Ice : public AMateria
 		Ice(void);
 		Ice(const Ice &cpy);
 		virtual ~Ice(void);
-		AMateria &operator=(const AMateria &rhs);
+		AMateria *operator=(const AMateria &rhs);
 
 		virtual	AMateria	*clone(void) const;
 		virtual	void		use(ICharacter &target) const;

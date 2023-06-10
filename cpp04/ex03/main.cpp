@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 17:56:27 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/06/06 19:28:03 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/06/10 11:47:21 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,16 @@ int	main(void)
 	src->learnMateria(new Cure());
 	ICharacter* me = new Character("Cloud");
 	ICharacter* you = new Character("Sephiroth");
+	AMateria*	mat;
+	AMateria*	ice = new Ice();
+	AMateria*	cura = new Cure();
+
+	std::cout <<"materia == ice" << std::endl;
+	mat = ice;
+	mat->use(*me);
+	std::cout <<"materia == cura" << std::endl;
+	mat = cura;
+	mat->use(*me);
 
 	AMateria* tmp;
 	tmp = src->createMateria("ice");

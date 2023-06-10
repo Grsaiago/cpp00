@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 22:35:42 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/06/06 19:31:49 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/06/10 11:45:20 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	Cure::use(ICharacter &target) const
 	return ;
 }
 
-AMateria	&Cure::operator=(const AMateria &rhs)
+AMateria	*Cure::operator=(const AMateria &rhs)
 {
-	return (*rhs.clone());
+	return (rhs.clone());
 }

@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 21:17:37 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/06/06 19:30:31 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/06/10 11:45:11 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	Ice::use(ICharacter &target) const
 	return ;
 }
 
-AMateria	&Ice::operator=(const AMateria &rhs)
+AMateria	*Ice::operator=(const AMateria &rhs)
 {
-	return (*rhs.clone());
+	return (rhs.clone());
 }
