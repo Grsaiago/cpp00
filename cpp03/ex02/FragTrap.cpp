@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 11:15:00 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/06/01 14:19:42 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/06/10 16:31:28 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "FragTrap.hpp"
@@ -15,8 +15,8 @@ FragTrap::FragTrap(void) : ClapTrap()
 {
 	FragTrap::setName("default_Frag");
 	FragTrap::setHitPoints(100);
-	FragTrap::setEnergyPoints(50);
-	FragTrap::setAttackDamage(20);
+	FragTrap::setEnergyPoints(100);
+	FragTrap::setAttackDamage(30);
 	std::cout << "Hello, vault hunter! I'm Scav: " << this->_name << std::endl;
 	return ;
 }
@@ -35,8 +35,8 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
 	FragTrap::setName(name);
 	FragTrap::setHitPoints(100);
-	FragTrap::setEnergyPoints(50);
-	FragTrap::setAttackDamage(20);
+	FragTrap::setEnergyPoints(100);
+	FragTrap::setAttackDamage(30);
 	std::cout << "Hello, vault hunter! I'm Scav: " << this->_name << std::endl;
 	return ;
 }

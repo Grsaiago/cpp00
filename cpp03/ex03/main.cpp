@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 12:42:42 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/06/03 12:12:32 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/06/10 16:41:23 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 #include "./DiamondTrap.hpp"
 
 void printName(ClapTrap *who);
-void	printInfo(const DiamondTrap &who);
+void	printInfo(ClapTrap &who);
 
-void	printInfo(const DiamondTrap &who)
+void	printInfo(ClapTrap &who)
 {
 	std::cout << who.getName() << ": Clap name > " << who.ClapTrap::getName() << std::endl;
 	std::cout << who.getName() << ": Hit points > " << who.getHitPoints() << std::endl;
@@ -53,12 +53,19 @@ int	main(void)
 		std::cout << c1.getName() << ": God <beep>ing dammit! Now there's two of you!!!" << std::endl;
 	}
 	*/
-
 	std::cout << "== test case 2 ==" << std::endl;
 	{
+		ClapTrap	c1("clapzada");
+		printInfo(c1);
+		ScavTrap	s1("Scavzao");
+		printInfo(s1);
+		s1.guardGate();
+		FragTrap	f1("Fragzao");
+		printInfo(f1);
+		f1.highFiveGuys();
+		std::cout << "------------------" << std::endl;
 		DiamondTrap	s2("s2");
 		DiamondTrap *s3 = new DiamondTrap("s3");
-
 		std::cout << "==== s2 info ====" << std::endl;
 		printInfo(s2);
 		std::cout << "==== s3 info ====" << std::endl;
@@ -74,8 +81,8 @@ int	main(void)
 		std::cout << "==== both whoAmI ====" << std::endl;
 		s2.whoAmI();
 		s3->whoAmI();
-//		s2.highFiveGuys();
-//		s2.guardGate();
+		s2.highFiveGuys();
+		s2.guardGate();
 
 		delete s3;
 	}

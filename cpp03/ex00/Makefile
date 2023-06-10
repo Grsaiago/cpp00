@@ -6,11 +6,11 @@
 #    By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/22 12:41:40 by gsaiago           #+#    #+#              #
-#    Updated: 2023/06/03 11:11:29 by gsaiago          ###   ########.fr        #
+#    Updated: 2023/06/10 16:42:44 by gsaiago          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = a.out 
+NAME = claptrap
 
 SRCS = ./main.cpp\
 	   ./ClapTrap.cpp\

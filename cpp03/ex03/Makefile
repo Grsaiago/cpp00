@@ -6,7 +6,7 @@
 #    By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/22 12:41:40 by gsaiago           #+#    #+#              #
-#    Updated: 2023/05/31 14:24:44 by gsaiago          ###   ########.fr        #
+#    Updated: 2023/06/10 16:28:14 by gsaiago          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRCS = ./main.cpp\
 
 CC = c++
 
-CFLAGS = -std=c++98 -g -Wall -Wextra -Werror
+CFLAGS = -std=c++98 -g -Wall -Wextra -Werror -Wshadow
 
 all: $(NAME)
 
