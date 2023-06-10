@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 09:20:15 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/05/20 10:23:52 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/06/10 12:38:41 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Fixed::Fixed(void) : raw_value(0)
 	return ;
 }
 
-Fixed::Fixed(class Fixed const &copy)
+Fixed::Fixed(Fixed const &copy)
 {
 	this->raw_value = copy.getRawBits();
 	return ;
@@ -59,9 +59,17 @@ int		Fixed::toInt(void) const
 	return (this->raw_value >> this->fraction);
 }
 
+float	Fixed::toFloat(void) const
+{
+	float	ret;
+
+	ret = (float)getRawBits() / (float)(1 << 8);
+	return (ret);
+}
+
 /* static member functions */
 
-Fixed	&min(Fixed &a, Fixed &b)
+Fixed	&Fixed::min(Fixed &a, Fixed &b)
 {
 	if (a.getRawBits() < b.getRawBits())
 		return (a);
@@ -137,17 +145,12 @@ Fixed	Fixed::operator+(Fixed const &rhs) const
 
 Fixed	Fixed::operator*(Fixed const &rhs) const
 {
-	Fixed	mult;
-
-	mult.setRawBits(this->raw_value * rhs.toInt());
-	return (mult);
+	return (this->toFloat() * rhs.toFloat());
 }
 
 Fixed	Fixed::operator/(Fixed const &rhs) const
 {
-	Fixed	tmp(this->getRawBits() / rhs.getRawBits());
-
-	return (tmp);
+	return (this->toFloat() / rhs.toFloat());
 }
 
 Fixed	Fixed::operator-(Fixed const &rhs) const

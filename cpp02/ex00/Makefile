@@ -6,11 +6,11 @@
 #    By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/19 09:20:27 by gsaiago           #+#    #+#              #
-#    Updated: 2023/06/03 11:10:02 by gsaiago          ###   ########.fr        #
+#    Updated: 2023/06/10 12:16:22 by gsaiago          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = a.out 
+NAME = test
 
 SRCS = ./main.cpp\
 	   ./Fixed.cpp\

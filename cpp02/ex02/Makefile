@@ -6,11 +6,11 @@
 #    By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/19 09:20:27 by gsaiago           #+#    #+#              #
-#    Updated: 2023/06/03 11:10:26 by gsaiago          ###   ########.fr        #
+#    Updated: 2023/06/10 12:48:15 by gsaiago          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = a.out 
+NAME = test
 
 SRCS = ./main.cpp\
 	   ./Fixed.cpp\
@@ -22,7 +22,7 @@ CFLAGS = -std=c++98 -g -Wall -Wextra -Werror
 all: $(NAME)
 
 $(NAME): $(SRCS)
-	$(CC) $(CFLAGS) $(SRCS) -o $(NAME) 
+	$(CC) $(CFLAGS) -D PDF=1 $(SRCS) -o $(NAME) 
 
 clean:
 	@rm -f $(NAME)
