@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 17:56:27 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/06/10 11:47:21 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/06/11 22:14:46 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,11 @@ int	main(void)
 	std::cout <<"materia == ice" << std::endl;
 	mat = ice;
 	mat->use(*me);
+	delete (mat);
 	std::cout <<"materia == cura" << std::endl;
 	mat = cura;
 	mat->use(*me);
+	delete (mat);
 
 	AMateria* tmp;
 	tmp = src->createMateria("ice");
