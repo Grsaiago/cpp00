@@ -6,25 +6,25 @@
 #    By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/01 18:57:34 by gsaiago           #+#    #+#              #
-#    Updated: 2023/06/03 16:09:22 by gsaiago          ###   ########.fr        #
+#    Updated: 2023/06/11 21:53:56 by gsaiago          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= abstract
 
 SRCS	= ./main.cpp \
-		  ./Animal.cpp \
+		  ./AAnimal.cpp \
 		  ./Cat.cpp \
 		  ./Dog.cpp \
-		  ./WrongAnimal.cpp \
+		  ./AWrongAnimal.cpp \
 		  ./WrongCat.cpp \
 		  ./WrongDog.cpp \
 		  ./Brain.cpp \
 
-INCLUDES	= ./Animal.hpp \
+INCLUDES	= ./AAnimal.hpp \
 			  ./Cat.hpp \
 			  ./Dog.hpp \
-			  ./WrongAnimal.hpp \
+			  ./AWrongAnimal.hpp \
 			  ./WrongCat.hpp \
 			  ./WrongDog.hpp \
 			  ./Brain.hpp \

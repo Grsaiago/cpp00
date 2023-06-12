@@ -6,14 +6,14 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 18:39:51 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/06/03 16:22:05 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/06/11 21:53:40 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
-#include "WrongAnimal.hpp"
+#include "AWrongAnimal.hpp"
 #include "WrongCat.hpp"
 #include "WrongDog.hpp"
 
@@ -24,9 +24,9 @@ int	main(void)
 		//std::cout << "== Animal Creation ==" << std::endl;
 		//const Animal* a1 = new Animal();
 		std::cout << "== Cat Creation ==" << std::endl;
-		const Animal* c1 = new Cat();
+		const AAnimal* c1 = new Cat();
 		std::cout << "== Dog Creation ==" << std::endl;
-		const Animal* d1 = new Dog();
+		const AAnimal* d1 = new Dog();
 
 		std::cout << std::endl;
 
@@ -50,9 +50,9 @@ int	main(void)
 		//std::cout << "== WrongAnimal Creation ==" << std::endl;
 		//const WrongAnimal* a1 = new WrongAnimal();
 		std::cout << "== WrongCat Creation ==" << std::endl;
-		const WrongAnimal* c1 = new WrongCat();
+		const AWrongAnimal* c1 = new WrongCat();
 		std::cout << "== WrongDog Creation ==" << std::endl;
-		const WrongAnimal* d1 = new WrongDog();
+		const AWrongAnimal* d1 = new WrongDog();
 
 		std::cout << std::endl;
 

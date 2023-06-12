@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 09:57:40 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/06/03 12:27:33 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/06/11 22:02:50 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,15 @@ WrongAnimal::WrongAnimal(void) : _type("default")
 	return ;
 }
 
-WrongAnimal::WrongAnimal(const WrongAnimal &cpy)
+WrongAnimal::WrongAnimal(const WrongAnimal &cpy) : _type(cpy.getType())
 {
 	std::cout << "A WrongAnimal is being constructed (?)" << std::endl;
-	this->setType(cpy.getType());
+	return ;
+}
+
+WrongAnimal::WrongAnimal(std::string type) : _type(type)
+{
+	std::cout << "A WrongAnimal is being constructed (?)" << std::endl;
 	return ;
 }
 

@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 18:31:27 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/06/03 12:22:26 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/06/11 21:59:14 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class Animal
 	public:
 		Animal(void);
 		Animal(const Animal &cpy);
+		Animal(std::string type);
 		Animal	&operator=(const Animal &rhs);
 		virtual ~Animal(void);
 		std::string 	getType(void) const;

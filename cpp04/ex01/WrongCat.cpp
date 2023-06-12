@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 10:00:52 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/06/03 12:27:47 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/06/11 22:06:48 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,17 @@
 #include "WrongCat.hpp"
 #include "Brain.hpp"
 
-WrongCat::WrongCat(void) : WrongAnimal()
+WrongCat::WrongCat(void) : WrongAnimal("WrongCat")
 {
 	std::cout << "A WrongCat is being constructed (?)" << std::endl;
-	this->setType("WrongCat");
 	this->_brain = new Brain();
 	return ;
 }
 
-WrongCat::WrongCat(const WrongCat &cpy) : WrongAnimal()
+WrongCat::WrongCat(const WrongCat &cpy) : WrongAnimal(cpy.getType())
 {
 	std::cout << "A WrongCat is being copy constructed (?)" << std::endl;
-	this->setType(cpy.getType());
-	this->_brain = cpy._brain;
+	this->_brain = new Brain(*cpy._brain);
 	return ;
 }
 
@@ -40,7 +38,7 @@ WrongCat::~WrongCat(void)
 WrongCat	&WrongCat::operator=(const WrongCat &rhs)
 {
 	this->setType(rhs.getType());
-	this->_brain = rhs._brain;
+	*this->_brain = *rhs._brain;
 	return (*this);
 }
 

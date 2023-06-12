@@ -6,17 +6,17 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 09:59:25 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/06/03 12:27:50 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/06/11 21:50:17 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #ifndef WRONGCAT_HPP
 # define WRONGCAT_HPP
-# include "WrongAnimal.hpp"
+# include "AWrongAnimal.hpp"
 # include "Brain.hpp"
 
-class WrongCat : public WrongAnimal
+class WrongCat : public AWrongAnimal
 {
 	public:
 		WrongCat(void);

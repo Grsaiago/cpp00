@@ -1,48 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
+/*   AWrongAnimal.cpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 09:57:40 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/06/03 16:13:55 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/06/11 22:02:57 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongAnimal.hpp"
+#include "AWrongAnimal.hpp"
 
-WrongAnimal::WrongAnimal(void) : _type("default")
+AWrongAnimal::AWrongAnimal(void) : _type("default")
 {
 	std::cout << "A WrongAnimal is being constructed (?)" << std::endl;
 	return ;
 }
 
-WrongAnimal::WrongAnimal(const WrongAnimal &cpy)
+AWrongAnimal::AWrongAnimal(const AWrongAnimal &cpy) : _type(cpy.getType())
 {
 	std::cout << "A WrongAnimal is being constructed (?)" << std::endl;
-	this->setType(cpy.getType());
 	return ;
 }
 
-WrongAnimal::~WrongAnimal(void)
+AWrongAnimal::AWrongAnimal(std::string type) : _type(type)
+{
+	std::cout << "A WrongAnimal is being constructed (?)" << std::endl;
+	return ;
+}
+
+AWrongAnimal::~AWrongAnimal(void)
 {
 	std::cout << "A WrongAnimal is being destructed (?)" << std::endl;
 	return ;
 }
 
-WrongAnimal	&WrongAnimal::operator=(const WrongAnimal &rhs)
+AWrongAnimal	&AWrongAnimal::operator=(const AWrongAnimal &rhs)
 {
 	this->setType(rhs.getType());
 	return (*this);
 }
 
-std::string 	WrongAnimal::getType(void) const
+std::string 	AWrongAnimal::getType(void) const
 {
 	return (this->_type);
 }
 
-void	WrongAnimal::setType(std::string new_type)
+void	AWrongAnimal::setType(std::string new_type)
 {
 	this->_type = new_type;
 	return ;

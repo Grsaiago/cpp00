@@ -6,7 +6,7 @@
 /*   By: gsaiago <gsaiago@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 09:55:57 by gsaiago           #+#    #+#             */
-/*   Updated: 2023/06/03 12:27:37 by gsaiago          ###   ########.fr       */
+/*   Updated: 2023/06/11 22:01:15 by gsaiago          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class WrongAnimal
 	public:
 		WrongAnimal(void);
 		WrongAnimal(const WrongAnimal &cpy);
+		WrongAnimal(std::string type);
 		virtual ~WrongAnimal(void);
 		WrongAnimal	&operator=(const WrongAnimal &rhs);
 		std::string 	getType(void) const;
