@@ -3,62 +3,44 @@
 #include "./PresidentialPardonForm.hpp"
 #include "./RobotomyRequestForm.hpp"
 #include "./ShrubberyCreationForm.hpp"
+#include "./Intern.hpp"
 
 int	main(void)
 {
-	Bureaucrat	bu("Gabriel", 1);
 	AForm		*form;
+	Intern		intern;
 
-	std::cout << bu << std::endl;
-
-	form = new PresidentialPardonForm("pessoa pra ser perdoada");
-	std::cout << *form << std::endl;
-	form->beSigned(bu);
-	form->execute(bu);
+	form = intern.makeForm("presidential pardon", "Gabriel0");
+	if (!form)
+		std::cout << "Veio nullo" << std::endl;
+	else
+		std::cout << *form << std::endl;
 	delete form;
-
-	form = new RobotomyRequestForm("Pessoa a ser lobotomizada");
-	std::cout << *form << std::endl;
-	bu.decrementGrade(130);
-	try {
-		form->beSigned(bu);
-	} catch (std::exception &error) {
-		std::cout << error.what() << std::endl;
-	}
-	bu.incrementGrade(130);
-	try {
-		form->beSigned(bu);
-		form->execute(bu);
-	} catch (std::exception &error) {
-		std::cout << error.what() << std::endl;
-	}
+	std::cout << std::endl;
+	
+	form = intern.makeForm("robotomy request", "Gabriel1");
+	if (!form)
+		std::cout << "Veio nullo" << std::endl;
+	else
+		std::cout << *form << std::endl;
 	delete form;
+	std::cout << std::endl;
 
-	form = new ShrubberyCreationForm("arquivoaa");
-	std::cout << *form << std::endl;
-	bu.decrementGrade(130);
-	try {
-		form->beSigned(bu);
-	} catch (std::exception &error) {
-		std::cout << error.what() << std::endl;
-	}
-	bu.incrementGrade(130);
-	try {
-		form->beSigned(bu);
-		form->execute(bu);
-	} catch (std::exception &error) {
-		std::cout << error.what() << std::endl;
-	}
+	form = intern.makeForm("shrubbery creation", "Gabriel2");
+	if (!form)
+		std::cout << "Veio nullo" << std::endl;
+	else
+		std::cout << *form << std::endl;
 	delete form;
+	std::cout << std::endl;
 
-#if !defined(ERROR_HIGH) && !defined(ERROR_LOW)
-#endif
-
-#ifdef ERROR_HIGH
-#endif
-
-#ifdef ERROR_LOW
-#endif
+	form = intern.makeForm("coisa aleatória", "Gabriel3");
+	if (!form)
+		std::cout << "Veio nullo" << std::endl;
+	else
+		std::cout << *form << std::endl;
+	delete form;
+	std::cout << std::endl;
 
 	return (0);
 }

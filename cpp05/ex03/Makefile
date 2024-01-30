@@ -1,19 +1,21 @@
 NAME = ex03
 
-SRCS =	./main.cpp\
-		./Bureaucrat.cpp\
-		./AForm.cpp\
-		./PresidentialPardonForm.cpp\
-		./RobotomyRequestForm.cpp\
-		./ShrubberyCreationForm.cpp\
+SRCS =	./main.cpp \
+		./Bureaucrat.cpp \
+		./AForm.cpp \
+		./PresidentialPardonForm.cpp \
+		./RobotomyRequestForm.cpp \
+		./ShrubberyCreationForm.cpp \
+		./Intern.cpp \
 
-DEPENDENCIES =	$(SRCS)\
-				./Makefile\
-				./Bureaucrat.hpp\
-				./AForm.hpp\
-				./PresidentialPardonForm.hpp\
-				./RobotomyRequestForm.hpp\
-				./ShrubberyCreationForm.hpp\
+DEPENDENCIES =	$(SRCS) \
+				./Makefile \
+				./Bureaucrat.hpp \
+				./AForm.hpp \
+				./PresidentialPardonForm.hpp \
+				./RobotomyRequestForm.hpp \
+				./ShrubberyCreationForm.hpp \
+				./Intern.hpp \
 
 CC = g++
 
