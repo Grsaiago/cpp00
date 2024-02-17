@@ -14,8 +14,8 @@ class Form
 
 		// getter / setter
 		std::string	getName(void) const;
-		int			getRequiredGradeToSign(void) const;
-		int			getRequiredGradeToExecute(void) const;
+		int		getRequiredGradeToSign(void) const;
+		int		getRequiredGradeToExecute(void) const;
 		bool		getSignedStatus(void) const;
 		void		setSignedStatus(bool newValue);
 
@@ -23,6 +23,7 @@ class Form
 		void	beSigned(Bureaucrat const &bu);
 
 		// overloads
+		Form	&operator=(const Form &rhs);
 
 		// exceptions
 		class GradeTooLowException : public std::logic_error {
@@ -36,9 +37,9 @@ class Form
 
 	private:
 		const std::string	_name;
-		const int			_requiredGradeToSign;
-		const int			_requiredGradeToExecute;
-		bool				_signed;
+		const int		_requiredGradeToSign;
+		const int		_requiredGradeToExecute;
+		bool			_signed;
 
 };
 

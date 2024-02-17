@@ -66,6 +66,14 @@ void	Form::setSignedStatus(bool newValue)
 }
 
 // overload
+Form	&operator=(const Form &rhs)
+{
+	this._name = rhs.getName();
+	this._requiredGradeToSign = rhs.getRequiredGradeToSign();
+	this._requiredGradeToExecute= rhs.getRequeiredGradeToExecute();
+	this._signed = rhs._getSignedStatus();
+}
+
 std::ostream	&operator<<(std::ostream &os, Form const &rhs)
 {
 	os << "-- Form '" << rhs.getName() << "' info --" << std::endl;
