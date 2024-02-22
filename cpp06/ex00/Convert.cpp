@@ -3,7 +3,8 @@
 static void	printPositiveInfInff(void);
 static void	printNegativeInfInff(void);
 static void	printNanNanf(void);
-static long	ft_strtol(std::string const &str);
+static void	printHigherThanLong(void);
+static double	ft_strtod(std::string const &str);
 
 Convert::Convert(void) { }
 
@@ -11,7 +12,7 @@ Convert::~Convert(void) { }
 
 void	Convert::convert(std::string str)
 {
-	long int number;
+	double number;
 
 	if (str.compare("nan") == 0
 	|| str.compare("nanf") == 0) {
@@ -30,8 +31,15 @@ void	Convert::convert(std::string str)
 	}
 
 	try {
-		number = ::ft_strtol(str);
+		number = ::ft_strtod(str);
+		(void)number;
+		std::cout << number << std::endl;
+		// ::printChar(number);
+		// ::printInt(number);
+		// ::printFloat(number);
+		// ::printDouble(number);
 	} catch (std::exception &err) {
+		::printHigherThanLong();
 		std::cout << err.what() << std::endl;
 	}
 }
@@ -64,15 +72,28 @@ static void	printNanNanf(void)
 	return ;
 }
 
-static long	ft_strtol(std::string const &str)
+static void	printHigherThanLong(void)
+{
+	std::cout << "char: you" << '\n';
+	std::cout << "int: really" << '\n';
+	std::cout << "float: tried" << '\n';
+	std::cout << "double: this???????" << std::endl;
+	return ;
+}
+
+static double	ft_strtod(std::string const &str)
 {
 	char	*endOfConversion;
-	long	result;
+	double	result;
 
-	result = strtol(str.c_str(), &endOfConversion, 10);
+	result = strtod(str.c_str(), &endOfConversion);
 	if (endOfConversion == str.c_str())
-		throw std::invalid_argument("ft_stol: invalid argument");
-	else if (result == LONG_MAX && errno == ERANGE)
-		throw std::out_of_range("ft_stol: long overflow...really??");
+		throw std::invalid_argument("ft_strtod: invalid argument");
+	/*
+	else if ((result == std::numeric_limits<double>::max() || result == std::numeric_limits<double>::min())
+		&& errno == ERANGE)
+	*/
+	else if (errno == ERANGE)
+		throw std::out_of_range("ft_strtod: double overflow...really??");
 	return (result);
 }

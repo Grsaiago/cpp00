@@ -9,7 +9,7 @@ DEPENDENCIES =	$(SRCS) \
 
 CC = c++
 
-CFLAGS = -g -Wall -Werror -Wextra -std=c++98
+CFLAGS = -g -Wextra -std=c++98
 
 
 all: $(NAME)

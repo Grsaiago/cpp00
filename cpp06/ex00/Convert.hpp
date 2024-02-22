@@ -5,7 +5,7 @@
 # include <stdexcept>
 # include <cstdlib>
 # include <cerrno>
-# include <climits>
+# include <limits>
 
 class Convert
 {
