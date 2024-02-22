@@ -2,10 +2,11 @@
 # define CONVERT_HPP
 # include <string>
 # include <iostream>
+# include <iomanip>
 # include <stdexcept>
+# include <limits>
 # include <cstdlib>
 # include <cerrno>
-# include <limits>
 
 class Convert
 {
