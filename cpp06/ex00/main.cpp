@@ -1,5 +1,6 @@
 #include "Convert.hpp"
 #include <iostream>
+#include <sstream>
 
 int main(void)
 {
