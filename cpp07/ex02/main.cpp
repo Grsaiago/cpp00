@@ -22,5 +22,12 @@ int	main(void)
 	arr2[4] = "zero";
 	std::cout << "array [arr2] depois de modificar" << arr2 << std::endl;
 
+	std::cout << '\n';
+	try {
+		std::cout << "Okay, everything works... Let's see what's in the tenth position xD" << std::endl;
+		arr2[10];
+	} catch (std::exception &err) {
+		std::cout << err.what() << std::endl;
+	}
 	return (0);
 }
