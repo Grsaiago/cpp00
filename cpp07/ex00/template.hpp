@@ -1,11 +1,11 @@
 template<typename T>
-void	swap(T a, T b)
+void	swap(T &a, T &b)
 {
 	T tmp;
 
 	tmp = a;
 	a = b;
-	b = t;
+	b = tmp;
 	return ;
 }
 
@@ -19,7 +19,7 @@ T	min(T &a, T &b)
 }
 
 template<typename T>
-T	min(T &a, T &b)
+T	max(T &a, T &b)
 {
 	if (a > b)
 		return (a);
