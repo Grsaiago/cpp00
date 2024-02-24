@@ -40,7 +40,6 @@ unsigned int Array<T>::size(void) const
 	return (this->_internalSize);
 }
 
-
 template<typename T>
 Array<T>	&Array<T>::operator=(Array<T> const &rhs)
 {
