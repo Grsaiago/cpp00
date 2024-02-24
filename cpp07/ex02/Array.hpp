@@ -2,6 +2,7 @@
 # define ARRAY_HPP
 
 # include <exception>
+# include <ostream>
 
 template<typename T>
 class Array
@@ -10,6 +11,7 @@ class Array
 		Array(void);
 		Array(Array const &cpy);
 		Array(unsigned int size);
+		~Array(void);
 	/* methods */
 		unsigned int	size(void) const;
 		T		*getInternalPtr(void) const;
@@ -24,16 +26,23 @@ class Array
 template<typename T>
 Array<T>::Array(void)
 {
-	this->_internalPtr = NULL;
+	this->_internalPtr = new T[0];
 	this->_internalSize = 0;
 	return ;
 }
 
 template<typename T>
-Array<T>::Array(Array const &cpy) : _internalPtr(new T[cpy.size()]), _internalSize(cpy.size())
+Array<T>::~Array(void)
+{
+	if (this->_internalPtr != NULL)
+		delete[] this->_internalPtr;
+}
+
+template<typename T>
+Array<T>::Array(Array<T> const &cpy) : _internalPtr(new T[cpy.size()]), _internalSize(cpy.size())
 {
 	for (unsigned int i = 0; i < cpy.size(); i++)
-		this->getInternalPtr()[i]  = cpy.getInternalPtr()[i];
+		this->_internalPtr[i]  = cpy.getInternalPtr()[i];
 	return ;
 }
 
@@ -65,7 +74,7 @@ Array<T>	&Array<T>::operator=(Array<T> const &rhs)
 	this->_internalPtr = new T[rhs.size()];
 	this->_internalSize = rhs.size();
 	for (unsigned int i = 0; i < rhs.size(); i++)
-		this->getInternalPtr() + i = rhs.getInternalPtr() + i;
+		*this[i] = rhs[i];
 	return (*this);
 }
 
@@ -75,6 +84,23 @@ T	&Array<T>::operator[](unsigned int pos) const
 	if (pos >= this->size())
 		throw new std::exception();
 	return(this->_internalPtr[pos]);
+}
+
+template<typename T>
+std::ostream	&operator<<(std::ostream &out, const Array<T> &arr)
+{
+	unsigned int i = 0;
+
+	out << '[';
+	while (i < arr.size())
+	{
+		out << arr[i];
+		i++;
+		if (i != arr.size())
+			out << ',';
+	}
+	out << ']';
+	return (out);
 }
 
 # include "Array.tpp"
