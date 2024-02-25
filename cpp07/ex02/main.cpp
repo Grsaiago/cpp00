@@ -4,6 +4,7 @@
 int	main(void)
 {
 	Array<std::string>	arr(5);
+	Array<int>		empty;
 
 	std::cout << "array [arr] logo após ser criado" << arr << std::endl;
 	arr[0] = "um";
@@ -29,5 +30,13 @@ int	main(void)
 	} catch (std::exception &err) {
 		std::cout << err.what() << std::endl;
 	}
+	std::cout << std::endl;
+	try {
+		std::cout << "Okay, you got me on that one! Now let's try to access an empty container" << std::endl;
+		empty[0];
+	} catch (std::exception &err) {
+		std::cout << err.what() << std::endl;
+	}
+
 	return (0);
 }
