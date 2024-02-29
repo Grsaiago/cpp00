@@ -63,3 +63,25 @@ unsigned int	Span::shortestSpan(void) const
 	}
 	return (min);
 }
+
+void	Span::fillSpan(void)
+{
+	for (std::list<int>::const_iterator i = this->_internal_lst.begin(); i != this->_internal_lst.end(); i++)
+	{
+	}
+}
+
+void	Span::putSpan(std::ostream &os) const
+{
+	for (std::list<int>::const_iterator i = this->_internal_lst.begin(); i != this->_internal_lst.end(); i++) {
+		os << *i << ' ';
+	}
+	return ;
+}
+
+std::ostream	&operator<<(std::ostream &os, Span const &rhs)
+{
+	rhs.putSpan(os);
+	os << std::endl;
+	return (os);
+}

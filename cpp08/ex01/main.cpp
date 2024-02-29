@@ -20,6 +20,7 @@ int main(void)
 	}
 	std::cout << obj.shortestSpan() << std::endl;
 	std::cout << obj.longestSpan() << std::endl;
+	std::cout << obj;
 
 	return (0);
 }
