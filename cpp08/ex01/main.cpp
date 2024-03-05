@@ -15,7 +15,6 @@ int main(void)
 		obj.addNumber(9);
 		obj.addNumber(11);
 	} catch (std::exception &err) {
-
 		std::cout << "deu erro" << std::endl;
 	}
 	std::cout << obj.shortestSpan() << std::endl;
