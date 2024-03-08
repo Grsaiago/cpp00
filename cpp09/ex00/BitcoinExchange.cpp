@@ -64,7 +64,7 @@ std::list<struct rateInfo>	*loadDatabase(std::string filename)
 	struct rateInfo			rateInfo;
 
 	if (file.is_open() != true) {
-		std::cerr << "Error! Can't connect to database" << std::endl;
+		std::cerr << "Error: Can't connect to database" << std::endl;
 		return (NULL);
 	}
 	getline(file, line);
@@ -75,7 +75,7 @@ std::list<struct rateInfo>	*loadDatabase(std::string filename)
 			lst->push_back(rateInfo);
 		}
 		else {
-			std::cerr << "Error! Corrupted database" << std::endl;
+			std::cerr << "Error: Corrupted database" << std::endl;
 			delete lst;
 			return (NULL);
 		}
@@ -103,9 +103,9 @@ bool		parseFileLine(std::string line, struct rateInfo &rateInfo, std::string for
 		throw std::logic_error((std::string("Error: invalid number => ") + line).c_str());
 	}
 	if (rateInfo.rate < 0)
-		throw std::logic_error("Error! not a positive number");
+		throw std::logic_error("Error: not a positive number");
 	if (rateInfo.rate > 1000)
-		throw std::logic_error("Error! too large a number");
+		throw std::logic_error("Error: too large a number");
 	rateInfo.timestamp = mktime(&date);
 	return (true);
 }
