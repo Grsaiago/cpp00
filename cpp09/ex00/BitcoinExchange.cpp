@@ -133,7 +133,7 @@ void	queryFile(std::string fileName, std::list<struct rateInfo> &db)
 	std::string		outLine;
 	struct tm		dateRef;
 	struct rateInfo		rateRef;
-	char			tempDate[13];
+	char			tempDate[14];
 
 	if (file.is_open() != true) {
 		std::cerr << "Error! Can't connect to database" << std::endl;
@@ -148,9 +148,9 @@ void	queryFile(std::string fileName, std::list<struct rateInfo> &db)
 		try {
 			(void)parseFileLine(line, rateRef);
 			strptime(line.c_str(), "%Y-%m-%d", &dateRef);
-			strftime(tempDate, sizeof(tempDate), "%Y-%m-%d => ", &dateRef);
+			strftime(tempDate, sizeof(tempDate), "%Y-%m-%d = ", &dateRef);
 			outLine = tempDate;
-			std::cout << outLine << findFirstOrClosest(rateRef, db) << std::endl;
+			std::cout << outLine << rateRef.rate << " = " << findFirstOrClosest(rateRef, db) << std::endl;
 		} catch (std::exception &err) {
 			std::cerr << err.what() << std::endl;
 		}
