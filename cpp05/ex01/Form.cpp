@@ -34,8 +34,10 @@ void	Form::beSigned(Bureaucrat const &bu)
 		bu.signForm(false, this->getName());
 		throw GradeTooLowException(std::string("Exception on signing " + this->getName() + " by " + bu.getName() + "\n").c_str());
 	}
-	else
+	else {
 		bu.signForm(true, this->getName());
+		this->_signed = true;
+	}
 	return ;
 }
 
