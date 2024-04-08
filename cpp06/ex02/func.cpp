@@ -2,7 +2,6 @@
 
 Base * generate(void)
 {
-	Base	*ptr;
 	int	randomNumber;
 
 	srand(time(0));
@@ -42,24 +41,25 @@ void identify(Base* p)
 
 void identify(Base& p)
 {
-	/*
-	if (dynamic_cast<A *>(dynamic_cast<Base *>(&p)) != NULL)
-		std::cout << "O tipo é A" << std::endl;
-	else if (dynamic_cast<B *>(dynamic_cast<Base *>(&p)) != NULL)
-		std::cout << "O tipo é B" << std::endl;
-	else if (dynamic_cast<C *>(dynamic_cast<Base *>(&p)) != NULL)
-		std::cout << "O tipo é C" << std::endl;
-	*/
-	if (dynamic_cast<A *>(&p) != NULL) {
+	try {
+		dynamic_cast<A &>(p);
 		std::cout << "O tipo é A" << std::endl;
 		return ;
+	} catch (std::exception &err) {
+		try {
+			dynamic_cast<B &>(p);
+			std::cout << "O tipo é B" << std::endl;
+			return ;
+		} catch (std::exception &err) {
+			try {
+				dynamic_cast<C &>(p);
+				std::cout << "O tipo é C" << std::endl;
+				return ;
+			} catch (std::exception &err) {
+				std::cout << "Não é nenhuma??" << std::endl;
+				return ;
+			}
+		}
 	}
-	else if (dynamic_cast<B *>(&p) != NULL)
-		std::cout << "O tipo é B" << std::endl;
-		return ;
-	}
-	else if (dynamic_cast<C *>(&p) != NULL) {
-		std::cout << "O tipo é C" << std::endl;
-		return ;
-	}
+	return ;
 }
