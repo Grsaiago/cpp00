@@ -24,14 +24,20 @@ void identify(Base* p)
 	Base	*ptr;
 
 	ptr = dynamic_cast<A *>(p);
-	if (ptr != NULL)
+	if (ptr != NULL) {
 		std::cout << "O tipo é A" << std::endl;
+		return ;
+	}
 	ptr = dynamic_cast<B *>(p);
-	if (ptr != NULL)
+	if (ptr != NULL) {
 		std::cout << "O tipo é B" << std::endl;
+		return ;
+	}
 	ptr = dynamic_cast<C *>(p);
-	if (ptr != NULL)
+	if (ptr != NULL) {
 		std::cout << "O tipo é C" << std::endl;
+		return ;
+	}
 }
 
 void identify(Base& p)
@@ -44,10 +50,16 @@ void identify(Base& p)
 	else if (dynamic_cast<C *>(dynamic_cast<Base *>(&p)) != NULL)
 		std::cout << "O tipo é C" << std::endl;
 	*/
-	if (dynamic_cast<A *>(&p) != NULL)
+	if (dynamic_cast<A *>(&p) != NULL) {
 		std::cout << "O tipo é A" << std::endl;
+		return ;
+	}
 	else if (dynamic_cast<B *>(&p) != NULL)
 		std::cout << "O tipo é B" << std::endl;
-	else if (dynamic_cast<C *>(&p) != NULL)
+		return ;
+	}
+	else if (dynamic_cast<C *>(&p) != NULL) {
 		std::cout << "O tipo é C" << std::endl;
+		return ;
+	}
 }
