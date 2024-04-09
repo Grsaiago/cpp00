@@ -18,7 +18,7 @@ Form::Form(std::string name, int sign, int execute) : _name(name),
 	return ;
 }
 
-Form::Form(Form const &cpy) : _name("copia"),
+Form::Form(Form const &cpy) : _name(cpy.getName()),
 	_requiredGradeToSign(cpy.getRequiredGradeToSign()),
 	_requiredGradeToExecute(cpy.getRequiredGradeToExecute()),
 	_signed(cpy.getSignedStatus())
@@ -34,8 +34,10 @@ void	Form::beSigned(Bureaucrat const &bu)
 		bu.signForm(false, this->getName());
 		throw GradeTooLowException(std::string("Exception on signing " + this->getName() + " by " + bu.getName() + "\n").c_str());
 	}
-	else
+	else {
 		bu.signForm(true, this->getName());
+		this->_signed = true;
+	}
 	return ;
 }
 
@@ -66,12 +68,10 @@ void	Form::setSignedStatus(bool newValue)
 }
 
 // overload
-Form	&operator=(const Form &rhs)
+Form	&Form::operator=(const Form &rhs)
 {
-	this._name = rhs.getName();
-	this._requiredGradeToSign = rhs.getRequiredGradeToSign();
-	this._requiredGradeToExecute= rhs.getRequeiredGradeToExecute();
-	this._signed = rhs._getSignedStatus();
+	this->_signed = rhs.getSignedStatus();
+	return (*this);
 }
 
 std::ostream	&operator<<(std::ostream &os, Form const &rhs)
