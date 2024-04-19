@@ -23,5 +23,8 @@ clean:
 
 re: clean all
 
+t: all
+	@echo "Test with teste.txt"
+	@./$(NAME) ./teste.txt
 
 .PHONY: all clean re
