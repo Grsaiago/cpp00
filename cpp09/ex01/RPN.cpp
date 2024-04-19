@@ -1,26 +1,26 @@
-#include "RNP.hpp"
+#include "RPN.hpp"
 
-RNP::RNP(std::string args) : _args(args) {
+RPN::RPN(std::string args) : _args(args) {
   if (args.find_first_not_of("0123456789*/+- ") != std::string::npos)
     throw std::logic_error(
         "Invalid Argument, insert only '0123456789*/-+ and space'");
   this->_args = args;
 }
 
-RNP::RNP(RNP &cpy) : _stack(cpy.getStack()), _args(cpy.getArgs()) {}
+RPN::RPN(RPN &cpy) : _stack(cpy.getStack()), _args(cpy.getArgs()) {}
 
-RNP::~RNP(void) {}
+RPN::~RPN(void) {}
 
-RNP &RNP::operator=(RNP &rhs) {
+RPN &RPN::operator=(RPN &rhs) {
   this->_stack = rhs.getStack();
   return (*this);
 }
 
-std::stack<int> &RNP::getStack(void) { return (this->_stack); }
+std::stack<int> &RPN::getStack(void) { return (this->_stack); }
 
-std::string &RNP::getArgs(void) { return (this->_args); }
+std::string &RPN::getArgs(void) { return (this->_args); }
 
-void RNP::calculate(void) {
+void RPN::calculate(void) {
   std::stringstream stream(this->getArgs());
   int ref = 0;
   int lhs = 0;

@@ -1,10 +1,10 @@
-NAME =		rnp
+NAME =		RPN
 
 SRCS =		./main.cpp \
-		./RNP.cpp \
+			./RPN.cpp \
 
 DEPENDENCIES =	$(SRCS) \
-		./RNP.hpp \
+				./RPN.hpp \
 
 CC = c++
 

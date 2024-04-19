@@ -1,4 +1,4 @@
-#include "RNP.hpp"
+#include "RPN.hpp"
 
 int main(int argc, char **argv) {
 
@@ -8,7 +8,7 @@ int main(int argc, char **argv) {
   }
 
   try {
-    RNP calculator(argv[1]);
+    RPN calculator(argv[1]);
     calculator.calculate();
   } catch (std::exception &err) {
     std::cout << err.what() << std::endl;
