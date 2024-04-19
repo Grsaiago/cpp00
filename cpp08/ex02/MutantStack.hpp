@@ -6,13 +6,13 @@
 #include <deque>
 #include <stack>
 
-template <typename T, typename C = std::deque<T>>
+template <typename T, typename C = std::deque<T> >
 class MutantStack : public std::stack<T, C> {
 public:
   typedef typename C::iterator iterator;
 
 public:
-  MutantStack(void);
+  MutantStack(void){};
   MutantStack(const MutantStack &rhs) { *this = rhs; }
   ~MutantStack() {}
   MutantStack &operator=(MutantStack const &rhs) {

@@ -3,7 +3,6 @@ NAME =		ex02
 SRCS =		./main.cpp \
 
 DEPENDENCIES =	$(SRCS) \
-		./MutantStack.hpp \
 
 CC = c++
 
