@@ -1,8 +1,11 @@
 #include "Span.hpp"
 #include <cstdlib>
+#include <ctime>
 #include <exception>
+#include <list>
 
-Span::Span(unsigned int capacity) : _capacity(capacity), _size(0) {}
+Span::Span(unsigned int capacity)
+    : _capacity(capacity), _size(0), _internal_lst(capacity, 0) {}
 
 Span::Span(Span const &cpy)
     : _capacity(cpy.getCapacity()), _size(0), _internal_lst(cpy.getLst()) {}
@@ -22,6 +25,7 @@ unsigned int Span::getSize(void) const { return (this->_size); }
 std::list<int> Span::getLst(void) const {
   return (std::list<int>(this->_internal_lst));
 }
+
 void Span::addNumber(unsigned int numb) {
   if (this->_size == this->_capacity)
     throw std::length_error("container full");
@@ -56,12 +60,14 @@ unsigned int Span::shortestSpan(void) const {
 }
 
 void Span::fillSpan(void) {
-  try {
-    while (true) {
-      this->addNumber(rand());
-    }
-  } catch (std::exception &err) {
-    ;
+  std::list<int>::iterator it = this->_internal_lst.begin();
+  std::list<int>::iterator end = this->_internal_lst.end();
+
+  srand(time(0));
+  while (it != end) {
+    *it = std::rand();
+    this->_size++;
+    ++it;
   }
   return;
 }

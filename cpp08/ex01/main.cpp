@@ -3,7 +3,7 @@
 
 int main(void) {
   Span obj(5);
-  Span obj2(10);
+  Span obj2(11000);
 
   std::cout << obj.getSize() << std::endl;
   std::cout << obj.getCapacity() << std::endl;
@@ -17,10 +17,18 @@ int main(void) {
   } catch (std::exception &err) {
     std::cout << "deu erro" << std::endl;
   }
+  std::cout << "--- obj.shortestSpan() ---" << std::endl;
   std::cout << obj.shortestSpan() << std::endl;
+  std::cout << "--- obj.longestSpan() ---" << std::endl;
   std::cout << obj.longestSpan() << std::endl;
   std::cout << obj;
+
+  std::cout << "--- obj2.fillSpan() ---" << std::endl;
   obj2.fillSpan();
-  std::cout << obj2;
+  std::cout << "--- obj2.shortestSpan() ---" << std::endl;
+  std::cout << obj2.shortestSpan() << std::endl;
+  std::cout << "--- obj2.longestSpan() ---" << std::endl;
+  std::cout << obj2.longestSpan() << std::endl;
+  std::cout << "--- Printing obj2 would spamm the terminal xD ---" << std::endl;
   return (0);
 }

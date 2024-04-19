@@ -18,8 +18,8 @@ public:
   unsigned int getSize(void) const;
   std::list<int> getLst(void) const;
   void addNumber(unsigned int numb);
-  unsigned int longestSpan(void) const;
   unsigned int shortestSpan(void) const;
+  unsigned int longestSpan(void) const;
   void fillSpan(void);
   void putSpan(std::ostream &os) const;
 
