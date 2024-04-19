@@ -23,5 +23,14 @@ clean:
 
 re: clean all
 
+t: all
+	@echo 'Test 1: "8 9 * 9 - 9 - 9 - 4 - 1 +"'
+	@./$(NAME) "8 9 * 9 - 9 - 9 - 4 - 1 +"
+	@echo 'Test 2:  "7 7 * 7 -"'
+	@./$(NAME) "7 7 * 7 -"
+	@echo 'Test 3: "1 2 * 2 / 2 * 2 4 - +"'
+	@./$(NAME) "1 2 * 2 / 2 * 2 4 - +"
+	@echo 'Test 4: "(1 + 1)"'
+	@./$(NAME) "(1 + 1)"
 
-.PHONY: all clean re
+.PHONY: all clean re t
