@@ -25,7 +25,6 @@ void RPN::calculate(void) {
   int ref = 0;
   int lhs = 0;
   int rhs = 0;
-  int result = 0;
 
   while (42) {
     ref = (stream >> std::ws).get();

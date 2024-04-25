@@ -1,10 +1,10 @@
-NAME =		btc
+NAME =		PmergeMe
 
 SRCS =		./main.cpp \
-		./BitcoinExchange.cpp \
+			PmergeMe.cpp \
 
 DEPENDENCIES =	$(SRCS) \
-		./BitcoinExchange.hpp \
+				PmergeMe.hpp \
 
 CC = c++
 
@@ -24,7 +24,6 @@ clean:
 re: clean all
 
 t: all
-	@echo "Test with teste.txt"
-	@./$(NAME) ./teste.txt
+	@./$(NAME) $$(shuf -i 1-100 | tr '\n' ' ')
 
-.PHONY: all clean re
+.PHONY: all clean re t
